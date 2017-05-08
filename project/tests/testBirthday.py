@@ -83,9 +83,9 @@ def ff_minsk_40_45():
 
 user = get_user_by_id(account_id=opera_account,
                       user_id='112127288')
-print user
-photo = user.photo_id
-print photo
+# print user
+# photo = user.photo_id
+# print photo
 # last_seen = user.last_seen
 # print last_seen
 # print type(last_seen)

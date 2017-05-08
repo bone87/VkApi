@@ -13,3 +13,11 @@ def parse_value_from_json_file(path_to_file):
     """
     with open(path_to_file, "r") as json_file:
         return json.load(json_file)
+
+
+def get_value_from_json(json_str, key):
+    try:
+        value_json = json_str[key]
+        return value_json
+    except KeyError:
+        raise KeyError(json_str)

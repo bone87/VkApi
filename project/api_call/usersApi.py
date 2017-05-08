@@ -1,4 +1,5 @@
 # coding=utf-8
+from framework.data_proc.jsonLib import get_value_from_json
 from framework.http.httpLib import HttpLib
 from project.api_call.baseApi import BaseApi
 from project.configuration.statusCode import status_code_200
@@ -36,7 +37,8 @@ class UsersApi(BaseApi):
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Users.search"  FAILED. {text}'.format(text=res.response.text)
-        users_list = res.response.json()['response']['items']
+        response = get_value_from_json(res.response.json(), 'response')
+        users_list = get_value_from_json(response, 'items')
         user_model_list = []
         for user in users_list:
             user_model = User().parse_response_to_user_model(user)
