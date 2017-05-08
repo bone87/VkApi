@@ -3,11 +3,12 @@ import time
 
 from framework.support.commonFunctions import get_random_int
 from project.steps.friendsSteps import add_quickly
-from project.steps.usersSteps import search_users_borovl
+from project.steps.usersSteps import search_users_borovl, search_users_lesnoi
 
 # 282 - Minsk
 # 649 - Grodno
 # 2017 - Borovlyany
+# 1517622 - Lesnoi
 
 minsk_id = 2017
 opera_account = '310582170'
@@ -15,7 +16,7 @@ ff_account = '291495044'
 
 
 def add_friends(account_id):
-    users = search_users_borovl(account_id)
+    users = search_users_lesnoi(account_id)
     users_no_friends = [user for user in users if user.friend_status == 0]
     no_friends_count = len(users_no_friends)
     limit = get_random_int(30, 40)
@@ -37,4 +38,4 @@ def add_friends(account_id):
                                             len=no_friends_count)
 
 
-add_friends(opera_account)
+add_friends(ff_account)

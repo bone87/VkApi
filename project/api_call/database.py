@@ -21,4 +21,4 @@ def get_cities(search_string):
                   params=params).send_get()
     print get_pretty(res.response.json()['response']['items'])
 
-# print get_cities('Гродно')
+print get_cities('Лесной')

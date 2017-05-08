@@ -51,7 +51,7 @@ def search_users_borovl(account_id):
 
 def search_users_lesnoi(account_id):
     return UsersApi(account_id).search(count=1000,
-                                       city=2017,
+                                       city=1517622,
                                        sex=1,
                                        age_from=19,
                                        age_to=49)
