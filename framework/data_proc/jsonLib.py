@@ -20,4 +20,5 @@ def get_value_from_json(json_str, key):
         value_json = json_str[key]
         return value_json
     except KeyError:
-        raise KeyError(json_str)
+        # raise KeyError(json_str)
+        print json_str
