@@ -38,4 +38,4 @@ def add_friends(account_id):
                                             len=no_friends_count)
 
 
-add_friends(opera_account)
+add_friends(ff_account)

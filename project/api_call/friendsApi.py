@@ -1,4 +1,5 @@
 # coding=utf-8
+from framework.data_proc.jsonLib import get_value_from_json
 from project.configuration.api_config import api_url, api_version
 from framework.http.httpLib import HttpLib
 from project.configuration.statusCode import status_code_200
@@ -31,7 +32,7 @@ class FriendsApi(object):
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Friends.add"  FAILED. {text}'.format(text=res.response.text)
-        return res.response.json()['response']
+        return get_value_from_json(res.response.json(), 'response')
 
     def are_friends(self, user_ids):
         """
