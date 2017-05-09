@@ -48,7 +48,7 @@ def likes_users_photo_account(account_id, users):
             last_name=user.last_name))
         if add_like_to_profile_photo(account_id=account_id, user=user):
             random_seconds = get_random_int(150, 300)
-            log_info('  {message}: {count}.'.format(message='Лайк',
+            log_info('   {message}: {count}.'.format(message='Лайк',
                                                     count=count))
             sleep(random_seconds)
             count += 1
