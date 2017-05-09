@@ -48,8 +48,8 @@ def send_birthday_messages(city_id,
                      .format(user_id=birthday_user.user_id,
                              date_time=datetime.datetime.fromtimestamp(
                                  birthday_user.last_seen)))
-        log_info('Отправлено сообщений: {count}/{len}'.format(count=count - 1,
-                                                              len=len(list_birthday_users)))
+    log_info('Отправлено сообщений: {count}/{len}'.format(count=count - 1,
+                                                          len=len(list_birthday_users)))
 
 
 def opera_minsk_20_24():

@@ -41,6 +41,14 @@ def search_birthday_users(account_id,
                                        birth_month=month_now)
 
 
+def search_users_minsk(account_id, age_from, age_to):
+    return UsersApi(account_id).search(count=1000,
+                                       city=282,
+                                       sex=1,
+                                       age_from=age_from,
+                                       age_to=age_to)
+
+
 def search_users_borovl(account_id):
     return UsersApi(account_id).search(count=1000,
                                        city=2017,
