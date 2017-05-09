@@ -27,7 +27,7 @@ class MessagesApi(BaseApi):
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Messages.send"  FAILED. {text}'.format(text=res.response.text)
-        log_info('Сообщение отправлено. Пользователь: id{user_id}, {first_name} {last_name}.'.format(
+        log_info('   Сообщение отправлено. Пользователь: id{user_id}, {first_name} {last_name}.'.format(
             user_id=user_model.user_id,
             first_name=user_model.first_name,
             last_name=user_model.last_name))

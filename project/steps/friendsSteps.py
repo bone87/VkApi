@@ -6,16 +6,6 @@ from framework.support.log import log_info
 from project.api_call.friendsApi import FriendsApi
 
 
-def add_user_to_friends_with_message(account_id, user_model, message=None):
-    if FriendsApi(account_id).are_friends(user_model.user_id) == 0:
-        status = FriendsApi(account_id).add(user_id=user_model.user_id,
-                                            text='{first_name}, {message}'.format(first_name=user_model.first_name,
-                                                                                  message=message))
-        assert status == 1, 'Заявка на добавление пользователя {user_id} в друзья НЕ ОТПРАВЛЕНА!' \
-            .format(user_id=user_model.user_id)
-        return status
-
-
 def add_quickly(account_id, user_model):
     status = FriendsApi(account_id).add(user_id=user_model.user_id)
     if status != 1:
@@ -57,7 +47,7 @@ def add_friends(account_id, users):
                                                                                            first_name=user.first_name,
                                                                                            last_name=user.last_name))
         if add_quickly(account_id=account_id, user_model=user) == 1:
-            random_seconds = get_random_int(300, 500)
+            random_seconds = get_random_int(500, 800)
             log_info('   {message}: {count}.'.format(message='Подписано',
                                                      count=count))
             sleep(random_seconds)

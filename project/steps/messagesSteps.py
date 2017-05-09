@@ -1,5 +1,12 @@
 # coding=utf-8
+import time
+
+import datetime
+
+from framework.support.commonFunctions import convert_date_to_unix_time_stamp, get_random_int, sleep
+from framework.support.log import log_info
 from project.api_call.messagesApi import MessagesApi
+from project.steps.usersSteps import search_birthday_users, detete_more_10_weeks_last_seen_users
 
 
 def send_message(account_id, user_model, message):
@@ -22,3 +29,24 @@ def send_birthday_message(account_id, user_model):
         return send_message(account_id=account_id,
                             user_model=user_model,
                             message=message)
+
+
+def send_birthday_messages(account_id,
+                           users):
+    users = detete_more_10_weeks_last_seen_users(users)
+    count_users = len(users)
+    log_info('Найдено {len} чел.'.format(len=count_users))
+    count = 1
+    for birthday_user in users:
+        result = send_birthday_message(account_id=account_id,
+                                       user_model=birthday_user)
+        if result is not None:
+            random_seconds = get_random_int(120, 300)
+            log_info('   {message}: {count}.'.format(message='Отправлено',
+                                                     count=count))
+            sleep(random_seconds)
+            count += 1
+        if count >= 20:
+            break
+    log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count - 1,
+                                                                         len=count_users))

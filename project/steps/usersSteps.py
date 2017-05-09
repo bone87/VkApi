@@ -1,6 +1,7 @@
 import time
 import datetime
 
+from framework.support.commonFunctions import convert_date_to_unix_time_stamp
 from project.api_call.friendsApi import FriendsApi
 from project.api_call.usersApi import UsersApi
 
@@ -23,9 +24,13 @@ def print_no_friends(user_id, users_list):
                                    all=len(users_list))
 
 
+def detete_more_10_weeks_last_seen_users(users):
+    return [user for user in users if user.last_seen >= convert_date_to_unix_time_stamp()]
+
+
 def search_birthday_users(account_id,
                           count=500,
-                          city=2017,
+                          city=282,
                           sex=1,
                           age_from=19,
                           age_to=49):
