@@ -73,6 +73,6 @@ class FriendsApi(object):
         friends_list = res.response.json()['response']['items']
         friends_model_list = []
         for friend in friends_list:
-            friend_model = User().parse_response_to_user_model(friend)
+            friend_model = User(friend)
             friends_model_list.append(friend_model)
         return friends_model_list

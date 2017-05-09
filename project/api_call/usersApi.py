@@ -25,7 +25,7 @@ class UsersApi(BaseApi):
         params = {'city': city,
                   'sort': '0',
                   'count': count,
-                  'fields': 'can_write_private_message, last_seen, has_photo, photo_id, friend_status',
+                  'fields': 'can_write_private_message, last_seen, has_photo, photo_id, blacklisted, friend_status',
                   'sex': sex,
                   'age_from': age_from,
                   'age_to': age_to,
@@ -41,22 +41,29 @@ class UsersApi(BaseApi):
         users_list = get_value_from_json(response, 'items')
         user_model_list = []
         for user in users_list:
-            user_model = User().parse_response_to_user_model(user)
-            # print user_model
-            user_model_list.append(user_model)
+            if not UsersApi.is_blacklisted(user):
+                user_model = User(user)
+                user_model_list.append(user_model)
         return user_model_list
+
+    @staticmethod
+    def is_blacklisted(user_json):
+        if get_value_from_json(user_json, 'blacklisted') == 1:
+            return True
 
     def get(self, user_id):
         url = '{api}users.get'.format(api=self.api_url)
         params = {'user_ids': user_id,
-                  'fields': 'can_write_private_message, last_seen, has_photo, photo_id',
+                  'fields': 'can_write_private_message, last_seen, has_photo, photo_id, blacklisted, friend_status',
                   'access_token': self.token,
                   'v': self.api_version}
         res = HttpLib(url=url,
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Users.get"  FAILED. {text}'.format(text=res.response.text)
-        return User().parse_response_to_user_model(get_value_from_json(res.response.json(), 'response')[0])
+        response = get_value_from_json(res.response.json(), 'response')[0]
+        if get_value_from_json(response, 'blacklisted') == 0:
+            return User(response)
 
     def get_nearby(self):
         url = '{api}users.getNearby'.format(api=self.api_url)
@@ -74,7 +81,7 @@ class UsersApi(BaseApi):
         users_list = res.response.json()['response']['items']
         user_model_list = []
         for user in users_list:
-            user_model = User().parse_response_to_user_model(user)
+            user_model = User(user)
             print user_model
             user_model_list.append(user_model)
         return user_model_list
