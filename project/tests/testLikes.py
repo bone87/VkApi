@@ -46,17 +46,16 @@ def likes_users(account_id, age_from, age_to):
                                age_to=age_to)
     log_info('Найдено {len}'.format(len=len(users)))
     count = 1
-    while count < 150:
+    while count < 140:
         random_index = random.randint(0, len(users))
-        print random_index
         user = users.pop(random_index)
-        print user
         if user.has_photo == 1:
             if add_like_to_profile_photo(account_id=account_id, user=user):
                 random_seconds = get_random_int(5, 20)
-                print '{message}: {count}, задержка {seconds} s'.format(message='Лайк',
-                                                                        count=count,
-                                                                        seconds=random_seconds)
+                print '[{random}] {message}: {count}, задержка {seconds} s'.format(random=random_index,
+                                                                                   message='Лайк',
+                                                                                   count=count,
+                                                                                   seconds=random_seconds)
                 time.sleep(random_seconds)
                 count += 1
             else:
@@ -71,6 +70,7 @@ def likes_users(account_id, age_from, age_to):
                                                                                               last_name=user.last_name)
     print 'Лайкнуто: {count}/{len}'.format(count=count - 1,
                                            len=len(users))
+
 
 # likes_friends(ff_account)
 likes_users(opera_account, 25, 25)
