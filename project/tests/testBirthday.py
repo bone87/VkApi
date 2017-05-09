@@ -6,6 +6,7 @@ import datetime
 import math
 
 from framework.support.commonFunctions import get_random_int, get_ten_weeks_before_date, convert_date_to_unix_time_stamp
+from framework.support.log import log_info
 from project.steps.messagesSteps import send_birthday_message
 from project.steps.usersSteps import search_birthday_users, get_user_by_id
 
@@ -26,7 +27,7 @@ def send_birthday_messages(city_id,
                                                 account_id=account_id,
                                                 age_from=age_from,
                                                 age_to=age_to)
-    print 'Найдено {len}'.format(len=len(list_birthday_users))
+    log_info('Найдено {len}'.format(len=len(list_birthday_users)))
     count = 1
     for birthday_user in list_birthday_users:
         if birthday_user.last_seen >= convert_date_to_unix_time_stamp():
@@ -34,28 +35,28 @@ def send_birthday_messages(city_id,
                                            user_model=birthday_user)
             if result is not None:
                 random_seconds = get_random_int(60, 300)
-                print '{message}: {count}, задержка {minutes:.2f} min'.format(message='Отправлено',
-                                                                              count=count,
-                                                                              minutes=float(random_seconds) / 60)
+                log_info('{message}: {count}, задержка {minutes:.2f} min'.format(message='Отправлено',
+                                                                                 count=count,
+                                                                                 minutes=float(random_seconds) / 60))
                 time.sleep(random_seconds)
                 count += 1
             if count >= 20:
                 break
         else:
 
-            print '[SKIP] id{user_id}, последняя активность: {date_time}.' \
-                .format(user_id=birthday_user.user_id,
-                        date_time=datetime.datetime.fromtimestamp(
-                            birthday_user.last_seen))
-    print 'Отправлено сообщений: {count}/{len}'.format(count=count-1,
-                                                       len=len(list_birthday_users))
+            log_info('[SKIP] id{user_id}, последняя активность: {date_time}.' \
+                     .format(user_id=birthday_user.user_id,
+                             date_time=datetime.datetime.fromtimestamp(
+                                 birthday_user.last_seen)))
+        log_info('Отправлено сообщений: {count}/{len}'.format(count=count - 1,
+                                                              len=len(list_birthday_users)))
 
 
-def opera_minsk_20_30():
+def opera_minsk_20_24():
     send_birthday_messages(city_id=minsk_id,
                            account_id=opera_account,
                            age_from=20,
-                           age_to=30)
+                           age_to=24)
 
 
 def opera_minsk_31_34():
@@ -79,10 +80,11 @@ def ff_minsk_40_45():
                            age_to=45)
 
 
+opera_minsk_20_24()
 # ff_minsk_35_39()
 
-user = get_user_by_id(account_id=opera_account,
-                      user_id='112127288')
+# user = get_user_by_id(account_id=opera_account,
+#                       user_id='112127288')
 # print user
 # photo = user.photo_id
 # print photo

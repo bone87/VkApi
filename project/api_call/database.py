@@ -1,6 +1,7 @@
 # coding=utf-8
 from framework.http.httpLib import HttpLib
 from framework.data_proc.jsonLib import get_pretty
+from framework.support.log import log_info
 
 
 def get_countries():
@@ -9,7 +10,7 @@ def get_countries():
               'v': '5.64'}
     res = HttpLib(url=url,
                   params=params).send_get()
-    print res.response.json()
+    log_info(res.response.json())
 
 
 def get_cities(search_string):
@@ -19,6 +20,7 @@ def get_cities(search_string):
               'v': '5.64'}
     res = HttpLib(url=url,
                   params=params).send_get()
-    print get_pretty(res.response.json()['response']['items'])
+    log_info(get_pretty(res.response.json()['response']['items']))
 
-print get_cities('Лесной')
+
+# get_cities('Лесной')

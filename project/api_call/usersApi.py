@@ -56,7 +56,7 @@ class UsersApi(BaseApi):
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Users.get"  FAILED. {text}'.format(text=res.response.text)
-        return User().parse_response_to_user_model(res.response.json()['response'][0])
+        return User().parse_response_to_user_model(get_value_from_json(res.response.json(), 'response')[0])
 
     def get_nearby(self):
         url = '{api}users.getNearby'.format(api=self.api_url)

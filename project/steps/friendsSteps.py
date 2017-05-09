@@ -1,4 +1,5 @@
 # coding=utf-8
+from framework.support.log import log_info
 from project.api_call.friendsApi import FriendsApi
 
 
@@ -15,15 +16,15 @@ def add_user_to_friends_with_message(account_id, user_model, message=None):
 def add_quickly(account_id, user_model):
     status = FriendsApi(account_id).add(user_id=user_model.user_id)
     if status != 1:
-        print 'Заявка на добавление пользователя {user_id} в друзья НЕ ОТПРАВЛЕНА!' \
-            .format(user_id=user_model.user_id)
+        log_info('Заявка на добавление пользователя {user_id} в друзья НЕ ОТПРАВЛЕНА!' \
+                 .format(user_id=user_model.user_id))
         return status
     else:
         if status == 1:
-            print 'Пользователь: id{user_id}, {first_name} {last_name} добавлен в подписку.'.format(
+            log_info('Пользователь: id{user_id}, {first_name} {last_name} добавлен в подписку.'.format(
                 user_id=user_model.user_id,
                 first_name=user_model.first_name,
-                last_name=user_model.last_name)
+                last_name=user_model.last_name))
             return status
 
 

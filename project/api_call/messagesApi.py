@@ -1,5 +1,7 @@
 # coding=utf-8
+from framework.data_proc.jsonLib import get_value_from_json
 from framework.http.httpLib import HttpLib
+from framework.support.log import log_info
 from project.api_call.baseApi import BaseApi
 from project.configuration.configReader import parse_value_from_users_tokens
 from project.configuration.statusCode import status_code_200
@@ -25,8 +27,8 @@ class MessagesApi(BaseApi):
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Messages.send"  FAILED. {text}'.format(text=res.response.text)
-        print 'Сообщение отправлено. Пользователь: id{user_id}, {first_name} {last_name}.'.format(
+        log_info('Сообщение отправлено. Пользователь: id{user_id}, {first_name} {last_name}.'.format(
             user_id=user_model.user_id,
             first_name=user_model.first_name,
-            last_name=user_model.last_name)
-        return res.response.json()['response']
+            last_name=user_model.last_name))
+        return get_value_from_json(res.response.json(), 'response')

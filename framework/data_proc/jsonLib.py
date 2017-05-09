@@ -1,5 +1,7 @@
 import json
 
+from framework.support.log import log_info
+
 
 def get_pretty(json_message):
     return json.dumps(json_message, sort_keys=True, indent=4, ensure_ascii=False)
@@ -21,4 +23,4 @@ def get_value_from_json(json_str, key):
         return value_json
     except KeyError:
         # raise KeyError(json_str)
-        print json_str
+        log_info('KeyError: {json}'.format(json=json_str))
