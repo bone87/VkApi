@@ -59,25 +59,25 @@ def opera_minsk_20_24():
                            age_to=24)
 
 
-def opera_minsk_31_34():
+def opera_minsk_25_27():
     send_birthday_messages(city_id=minsk_id,
                            account_id=opera_account,
-                           age_from=31,
-                           age_to=34)
+                           age_from=25,
+                           age_to=27)
 
 
-def ff_minsk_35_39():
+def ff_minsk_28_32():
     send_birthday_messages(city_id=minsk_id,
                            account_id=ff_account,
-                           age_from=35,
-                           age_to=39)
+                           age_from=28,
+                           age_to=32)
 
 
-def ff_minsk_40_45():
+def ff_minsk_33_37():
     send_birthday_messages(city_id=minsk_id,
                            account_id=ff_account,
-                           age_from=40,
-                           age_to=45)
+                           age_from=33,
+                           age_to=37)
 
 
 opera_minsk_20_24()
