@@ -24,7 +24,7 @@ def get_random_int(lower=0, upper=100):
 
 
 def sleep(seconds):
-    log_info('   Задержка {minutes:.1f} min.'.format(minutes=float(seconds)/60))
+    log_info('   Задержка {minutes:.2f} min.'.format(minutes=float(seconds)/60))
     time.sleep(seconds)
 
 
