@@ -53,8 +53,8 @@ class FriendsApi(object):
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Friends.are_firends"  FAILED. {text}'.format(text=res.response.text)
-        print res.response.json()
-        return res.response.json()['response'][0]['friend_status']
+        response = get_value_from_json(res.response.json(), 'response')[0]
+        return get_value_from_json(response, 'friend_status')
 
     def get(self, user_id=None):
         """
@@ -69,8 +69,8 @@ class FriendsApi(object):
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Friends.add"  FAILED. {text}'.format(text=res.response.text)
-        print res.response.json()
-        friends_list = res.response.json()['response']['items']
+        response = get_value_from_json(res.response.json(), 'response')
+        friends_list = get_value_from_json(response, 'items')
         friends_model_list = []
         for friend in friends_list:
             friend_model = User(friend)
