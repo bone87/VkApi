@@ -1,4 +1,5 @@
 # coding=utf-8
+from framework.data_proc.jsonLib import get_value_from_json
 from framework.http.httpLib import HttpLib
 from project.api_call.baseApi import BaseApi
 from project.configuration.statusCode import status_code_200
@@ -38,8 +39,8 @@ class LikesApi(BaseApi):
                       params=params).send_get()
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Likes.isLiked"  FAILED. {text}'.format(text=res.response.text)
-        response = res.response.json()['response']
-        return response['liked'], response['copied']
+        response = get_value_from_json(res.response.json(), 'response')
+        return get_value_from_json(response, 'liked'), get_value_from_json(response, 'copied')
 
     def add(self, owner_id, item_id_obj, type_obj='photo'):
         """
@@ -68,4 +69,5 @@ class LikesApi(BaseApi):
         status_code = res.response.status_code
         assert status_code == status_code_200, '"Likes.add"  FAILED. {text}'.format(text=res.response.text)
         print 'Лайк проставлен. Пользователь: id{user_id}.'.format(user_id=owner_id)
-        return res.response.json()['response']['likes']
+        response = get_value_from_json(res.response.json(), 'response')
+        return get_value_from_json(response, 'likes')
