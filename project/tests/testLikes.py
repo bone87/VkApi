@@ -13,5 +13,4 @@ users_les = search_users_lesnoi(account_id=ff_account)
 # users_with_photo = delete_users_without_photo(users_les)
 # print len(users_with_photo)
 # likes_friends(ff_account)
-
 likes_users_photo_account(account_id=ff_account, users=users_les)

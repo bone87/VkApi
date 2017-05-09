@@ -1,7 +1,10 @@
+# coding=utf-8
 import uuid
 from random import randint
 import time
 import datetime
+
+from framework.support.log import log_info
 
 
 def get_unique_string(length=8):
@@ -15,7 +18,14 @@ def get_random_int(lower=0, upper=100):
     """
     Generate int in range [lower, upper]
     """
-    return randint(lower, upper)
+    random_int = randint(lower, upper)
+    # log_info('   Сгенерировано число: {random}.'.format(random=random_int))
+    return random_int
+
+
+def sleep(seconds):
+    log_info('   Задержка {minutes:.1f} min.'.format(minutes=float(seconds)/60))
+    time.sleep(seconds)
 
 
 def get_ten_weeks_before_date(start=datetime.datetime.today()):

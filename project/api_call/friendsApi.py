@@ -76,3 +76,15 @@ class FriendsApi(object):
             friend_model = User(friend)
             friends_model_list.append(friend_model)
         return friends_model_list
+
+
+# url = 'https://api.vk.com/method/friends.add'
+# params = {'user_id': '291495044',
+#           'captcha_sid': '906730894873',
+#           'captcha_key ': 'v8ha',
+#           'access_token': '014d3430a604a0e5e4ebc684e011ad149c37280e6d34cbb1d6b19c59926b38629797283d0e63c77127235',
+#           'v': '5.64'}
+# res = HttpLib(url=url,
+#               params=params).send_get()
+# status_code = res.response.status_code
+# print status_code
