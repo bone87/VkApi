@@ -13,7 +13,7 @@ opera_account = '310582170'
 ff_account = '291495044'
 # black = id78641892
 
-users_minsk = search_users_minsk(account_id=ff_account, count=100, age_from=19, age_to=19)
+users_minsk = search_users_minsk(account_id=opera_account, count=100, age_from=25, age_to=25)
 # users_borov = search_users_borovl(account_id=opera_account)
 # users_les = search_users_lesnoi(account_id=ff_account)
-add_friends(ff_account, users_minsk)
+add_friends(opera_account, users_minsk)
