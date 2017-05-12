@@ -6,7 +6,7 @@ import datetime
 from framework.support.commonFunctions import convert_date_to_unix_time_stamp, get_random_int, sleep
 from framework.support.log import log_info
 from project.api_call.messagesApi import MessagesApi
-from project.steps.usersSteps import search_birthday_users, detete_more_10_weeks_last_seen_users
+from project.steps.usersSteps import detete_more_10_weeks_last_seen_users
 
 
 def send_message(account_id, user_model, message):

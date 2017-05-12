@@ -3,7 +3,6 @@ import time
 import datetime
 
 from framework.support.commonFunctions import convert_date_to_unix_time_stamp
-from framework.support.log import log_info
 from project.api_call.friendsApi import FriendsApi
 from project.api_call.usersApi import UsersApi
 
@@ -74,10 +73,3 @@ def search_users_lesnoi(account_id):
 
 def get_user_by_id(account_id, user_id):
     return UsersApi(account_id).get(user_id)
-
-
-def pri():
-    for i in range(5):
-        log_info('фывапро')
-
-# pri()
