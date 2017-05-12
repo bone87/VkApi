@@ -31,7 +31,7 @@ def config_log():
     log.setLevel(logging.INFO)
     format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     ch = logging.StreamHandler(sys.stdout)
-    # ch.setFormatter(format)
+    ch.setFormatter(format)
     # log.addHandler(ch)
     # fh = handlers.RotatingFileHandler(create_log_file(), maxBytes=(1048576 * 5), backupCount=7)
     # fh.setFormatter(format)
