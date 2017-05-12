@@ -80,4 +80,4 @@ def pri():
     for i in range(5):
         log_info('фывапро')
 
-pri()
+# pri()
