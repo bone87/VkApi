@@ -1,4 +1,4 @@
-# encoding=utf8
+# encoding=windows-1251
 import sys
 
 reload(sys)
@@ -51,8 +51,9 @@ def log_step(number, message):
 
 def log_info(message):
     log.info('{template:<50} {message}'.format(template=template.format(module_name=inspect.stack()[1][3],
-                                                                         file_name=os.path.split(inspect.stack()[1][1])[1]),
-                                                message=message))
+                                                                        file_name=os.path.split(inspect.stack()[1][1])[
+                                                                            1]),
+                                               message=message))
 
 
 def log_pretty_json(json_message, message=None):

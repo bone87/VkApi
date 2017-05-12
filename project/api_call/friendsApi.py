@@ -79,9 +79,9 @@ class FriendsApi(object):
 
 
 # url = 'https://api.vk.com/method/friends.add'
-# params = {'user_id': '291495044',
-#           'captcha_sid': '906730894873',
-#           'captcha_key ': 'v8ha',
+# params = {'user_id': '310582170',
+#           'captcha_sid': '299917636468',
+#           'captcha_key ': 's7amh',
 #           'access_token': '014d3430a604a0e5e4ebc684e011ad149c37280e6d34cbb1d6b19c59926b38629797283d0e63c77127235',
 #           'v': '5.64'}
 # res = HttpLib(url=url,

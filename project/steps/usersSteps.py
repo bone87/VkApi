@@ -79,3 +79,5 @@ def get_user_by_id(account_id, user_id):
 def pri():
     for i in range(5):
         log_info('фывапро')
+
+pri()
