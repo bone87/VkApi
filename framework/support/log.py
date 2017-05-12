@@ -18,9 +18,9 @@ def create_log_file():
     path = os.path.join(os.path.abspath(os.path.dirname(__file__) + '/../../'), 'log/')
     now = datetime.datetime.now()
 
-    basedir = os.path.dirname(path)
-    if not os.path.exists(basedir):
-        os.makedirs(basedir)
+    # basedir = os.path.dirname(path)
+    # if not os.path.exists(basedir):
+    #     os.makedirs(basedir)
 
     file_name = os.path.join(path, now.strftime("%Y-%m-%d") + ".log")
     return file_name
