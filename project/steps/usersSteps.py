@@ -47,10 +47,11 @@ def search_birthday_users(account_id,
                                        birth_month=month_now)
 
 
-def search_users_minsk(account_id, count=1000, age_from=19, age_to=49):
+def search_users_minsk(account_id, count=1000, status=None, age_from=19, age_to=49):
     return UsersApi(account_id).search(count=count,
                                        city=282,
                                        sex=1,
+                                       status=status,
                                        age_from=age_from,
                                        age_to=age_to)
 
@@ -73,3 +74,7 @@ def search_users_lesnoi(account_id):
 
 def get_user_by_id(account_id, user_id):
     return UsersApi(account_id).get(user_id)
+
+
+# users = search_users_minsk(account_id='310582170')
+# print len(users)
