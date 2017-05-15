@@ -31,16 +31,24 @@ def exec_commands(cmds):
 
 path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/addLikesMinskFirefox.robot'
 path_to_test2 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/addLikesMinskOpera.robot'
+path_to_test3 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/addLikesEngagedBone.robot'
+path_to_test4 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/addLikesEngagedPrichello.robot'
 commands = [
     ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/likes', '--output',
      'test_set1_output.xml', '--report', 'test_set1_report.html', '--log', 'test_set1_log.html', path_to_test1],
     ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/likes', '--output',
      'test_set2_output.xml', '--report', 'test_set2_report.html', '--log', 'test_set2_log.html', path_to_test2],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/likes', '--output',
+         'test_set3_output.xml', '--report', 'test_set3_report.html', '--log', 'test_set3_log.html', path_to_test3],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/likes', '--output',
+         'test_set4_output.xml', '--report', 'test_set4_report.html', '--log', 'test_set4_log.html', path_to_test4]
 ]
 exec_commands(commands)
 print "Merge test reports"
 rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/test_set1_output.xml',
       '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/test_set2_output.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/test_set3_output.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/test_set4_output.xml',
       report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/common_report.html',
       log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/common_log.html',
       xunit='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/robotxunit.xml')
