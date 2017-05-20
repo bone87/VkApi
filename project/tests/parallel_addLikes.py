@@ -29,26 +29,41 @@ def exec_commands(cmds):
             time.sleep(0.05)
 
 
-path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/addLikesMinskFirefox.robot'
-path_to_test2 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/addLikesMinskOpera.robot'
-path_to_test3 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/addLikesEngagedBone.robot'
-path_to_test4 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/addLikesEngagedPrichello.robot'
+path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/add_likes.robot'
 commands = [
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/likes', '--output',
-     'test_set1_output.xml', '--report', 'test_set1_report.html', '--log', 'test_set1_log.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/likes', '--output',
-     'test_set2_output.xml', '--report', 'test_set2_report.html', '--log', 'test_set2_log.html', path_to_test2],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/likes', '--output',
-         'test_set3_output.xml', '--report', 'test_set3_report.html', '--log', 'test_set3_log.html', path_to_test3],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/likes', '--output',
-         'test_set4_output.xml', '--report', 'test_set4_report.html', '--log', 'test_set4_log.html', path_to_test4]
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+     '--test', '375298462344_Minsk_likes',
+     '--output', 'output_375298462344_Minsk_likes.xml',
+     '--report', 'report_375298462344_Minsk_likes.html',
+     '--log', 'log_375298462344_Minsk_likes.html', path_to_test1],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+     '--test', '375298360265_Minsk_likes',
+     '--output', 'output_375298360265_Minsk_likes.xml',
+     '--report', 'report_375298360265_Minsk_likes.html',
+     '--log', 'log_375298360265_Minsk_likes.html', path_to_test1],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+     '--test', 'Bone_Minsk_likes_engaged',
+     '--output', 'output_Bone_Minsk_likes_engaged.xml',
+     '--report', 'report_Bone_Minsk_likes_engaged.html',
+     '--log', 'log_Bone_Minsk_likes_engaged.html', path_to_test1],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+     '--test', 'Prichello_Minsk_likes_engaged',
+     '--output', 'output_Prichello_Minsk_likes_engaged.xml',
+     '--report', 'report_Prichello_Minsk_likes_engaged.html',
+     '--log', 'log_Prichello_Minsk_likes_engaged.html', path_to_test1]
 ]
 exec_commands(commands)
 print "Merge test reports"
-rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/test_set1_output.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/test_set2_output.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/test_set3_output.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/test_set4_output.xml',
-      report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/common_report.html',
-      log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/common_log.html',
+rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
+      'output_375298462344_Minsk_likes.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
+      'output_375298360265_Minsk_likes.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
+      'output_Bone_Minsk_likes_engaged.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
+      'output_Prichello_Minsk_likes_engaged.xml',
+      report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes'
+             '/report_add_likes.html',
+      log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes'
+          '/log_add_likes.html',
       xunit='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/robotxunit.xml')
