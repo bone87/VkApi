@@ -15,3 +15,11 @@ ${ff_account} =  291495044
 +375298360265_Minsk_26
     ${users} =          Search Birthday Users            account_id=${ff_account}       age_from=26		    age_to=26
                         Send Birthday Messages           account_id=${ff_account}       users=${users}
+
++375298462344_Minsk_27
+    ${users} =          Search Birthday Users            account_id=${opera_account}    age_from=27		    age_to=27
+                        Send Birthday Messages           account_id=${opera_account}    users=${users}
+
++375298360265_Minsk_28
+    ${users} =          Search Birthday Users            account_id=${ff_account}       age_from=28		    age_to=28
+                        Send Birthday Messages           account_id=${ff_account}       users=${users}
