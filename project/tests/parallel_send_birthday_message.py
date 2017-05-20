@@ -29,18 +29,29 @@ def exec_commands(cmds):
             time.sleep(0.05)
 
 
-path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/sendBirthdayMessageFirefox.robot'
-path_to_test2 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/sendBirthdayMessageOpera.robot'
+path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/send_birthday_message.robot'
 commands = [
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/birthday', '--output',
-     'test_set1_output.xml', '--report', 'test_set1_report.html', '--log', 'test_set1_log.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot', '--test', 'Test title', '--outputdir', 'reports/birthday', '--output',
-     'test_set2_output.xml', '--report', 'test_set2_report.html', '--log', 'test_set2_log.html', path_to_test2],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+        '--test', '+375298462344_Minsk_25',
+        '--outputdir', 'reports/message',
+        '--output', 'output_+375298462344_Minsk_25.xml',
+        '--report', 'report_+375298462344_Minsk_25.html',
+        '--log', 'log_+375298462344_Minsk_25.html', path_to_test1],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+        '--test', '+375298360265_Minsk_26',
+        '--outputdir', 'reports/message',
+        '--output', 'output_+375298360265_Minsk_26.xml',
+        '--report', 'report_+375298360265_Minsk_26.html',
+        '--log', 'log_+375298360265_Minsk_26.html', path_to_test1],
 ]
 exec_commands(commands)
 print "Merge test reports"
-rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/birthday/test_set1_output.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/birthday/test_set2_output.xml',
-      report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/birthday/common_report.html',
-      log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/birthday/common_log.html',
-      xunit='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/birthday/robotxunit.xml')
+rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message/output_'
+      '+375298462344_Minsk_25.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message/output_'
+      '+375298360265_Minsk_26.xml',
+      report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message'
+             '/report_send_birthdayMessage_morning.html',
+      log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message'
+          '/log_send_birthdayMessage_morning.html',
+      xunit='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message/robotxunit.xml')

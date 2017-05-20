@@ -11,17 +11,12 @@ import os
 import datetime
 import sys
 
-from logging import handlers
-
 
 def create_log_file():
     path = os.path.join(os.path.abspath(os.path.dirname(__file__) + '/../../'), 'log/')
     now = datetime.datetime.now()
-
-    # basedir = os.path.dirname(path)
-    # if not os.path.exists(basedir):
-    #     os.makedirs(basedir)
-
+    if not os.path.exists(path):
+        os.makedirs(path)
     file_name = os.path.join(path, now.strftime("%Y-%m-%d") + ".log")
     return file_name
 
