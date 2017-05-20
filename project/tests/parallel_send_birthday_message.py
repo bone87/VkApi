@@ -32,22 +32,22 @@ def exec_commands(cmds):
 path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/send_birthday_message.robot'
 commands = [
     ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
-        '--test', '+375298462344_Minsk_25',
-        '--output', 'output_375298462344_Minsk_25.xml',
-        '--report', 'report_375298462344_Minsk_25.html',
-        '--log', 'log_375298462344_Minsk_25.html', path_to_test1],
+        '--test', '+375298462344_Minsk_30',
+        '--output', 'output_375298462344_Minsk_30.xml',
+        '--report', 'report_375298462344_Minsk_30.html',
+        '--log', 'log_375298462344_Minsk_30.html', path_to_test1],
     ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
-        '--test', '+375298360265_Minsk_26',
-        '--output', 'output_375298360265_Minsk_26.xml',
-        '--report', 'report_375298360265_Minsk_26.html',
-        '--log', 'log_375298360265_Minsk_26.html', path_to_test1],
+        '--test', '+375298360265_Minsk_31',
+        '--output', 'output_375298360265_Minsk_31.xml',
+        '--report', 'report_375298360265_Minsk_31.html',
+        '--log', 'log_375298360265_Minsk_31.html', path_to_test1],
 ]
 exec_commands(commands)
 print "Merge test reports"
 rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/output_'
-      '375298462344_Minsk_25.xml',
+      '375298462344_Minsk_30.xml',
       '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/output_'
-      '375298360265_Minsk_26.xml',
+      '375298360265_Minsk_31.xml',
       report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message'
              '/report_send_birthdayMessage_morning.html',
       log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message'
