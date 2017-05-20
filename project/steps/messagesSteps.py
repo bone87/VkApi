@@ -46,7 +46,7 @@ def send_birthday_messages(account_id,
                                                      count=count))
             sleep(random_seconds)
             count += 1
-        if count >= 20:
-            break
+            if count >= 20:
+                break
     log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count - 1,
                                                                          len=count_users))
