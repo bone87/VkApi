@@ -32,6 +32,16 @@ def exec_commands(cmds):
 path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/send_birthday_message.robot'
 commands = [
     ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+        '--test', '+375298681142_Minsk_26',
+        '--output', 'output_375298681142_Minsk_26.xml',
+        '--report', 'report_375298681142_Minsk_26.html',
+        '--log', 'log_375298681142_Minsk_26.html', path_to_test1],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+        '--test', '+375447693824_Minsk_27',
+        '--output', 'output_375447693824_Minsk_27.xml',
+        '--report', 'report_375447693824_Minsk_27.html',
+        '--log', 'log_375447693824_Minsk_27.html', path_to_test1],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
         '--test', '+375298462344_Minsk_30',
         '--output', 'output_375298462344_Minsk_30.xml',
         '--report', 'report_375298462344_Minsk_30.html',
@@ -48,6 +58,10 @@ rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/outpu
       '375298462344_Minsk_30.xml',
       '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/output_'
       '375298360265_Minsk_31.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/output_'
+      '375298681142_Minsk_26.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/output_'
+      '375447693824_Minsk_27.xml',
       report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message'
              '/report_send_birthdayMessage_morning.html',
       log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message'
