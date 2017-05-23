@@ -32,6 +32,16 @@ def exec_commands(cmds):
 path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/add_likes.robot'
 commands = [
     ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+     '--test', '375298681142_Minsk_likes',
+     '--output', 'output_375298681142_Minsk_likes.xml',
+     '--report', 'report_375298681142_Minsk_likes.html',
+     '--log', 'log_375298681142_Minsk_likes.html', path_to_test1],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+     '--test', '375447693824_Minsk_likes',
+     '--output', 'output_375447693824_Minsk_likes.xml',
+     '--report', 'report_375447693824_Minsk_likes.html',
+     '--log', 'log_375447693824_Minsk_likes.html', path_to_test1],
+    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
      '--test', '375298462344_Minsk_likes',
      '--output', 'output_375298462344_Minsk_likes.xml',
      '--report', 'report_375298462344_Minsk_likes.html',
@@ -55,6 +65,10 @@ commands = [
 exec_commands(commands)
 print "Merge test reports"
 rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
+      'output_375298681142_Minsk_likes.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
+      'output_375447693824_Minsk_likes.xml',
+      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
       'output_375298462344_Minsk_likes.xml',
       '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
       'output_375298360265_Minsk_likes.xml',
