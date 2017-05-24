@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+import os
 import time
 from subprocess import Popen, list2cmdline
 
+import sys
 from robot import rebot
 
 
@@ -28,56 +30,61 @@ def exec_commands(cmds):
         else:
             time.sleep(0.05)
 
+path_to_pybot_unix = '/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot'
+path_to_pybot_win = 'c:/Python27/Scripts/pybot.bat'
+if sys.platform == 'win32':
+    path_to_pybot = path_to_pybot_win
+else:
+    path_to_pybot = path_to_pybot_unix
+path_to_tests = os.path.abspath(os.path.dirname(__file__))
+path_to_test1 = os.path.join(path_to_tests, 'add_likes.robot')
 
-path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/add_likes.robot'
 commands = [
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+    [path_to_pybot,
      '--test', '375298681142_Minsk_likes',
      '--output', 'output_375298681142_Minsk_likes.xml',
      '--report', 'report_375298681142_Minsk_likes.html',
      '--log', 'log_375298681142_Minsk_likes.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+    [path_to_pybot,
      '--test', '375447693824_Minsk_likes',
      '--output', 'output_375447693824_Minsk_likes.xml',
      '--report', 'report_375447693824_Minsk_likes.html',
      '--log', 'log_375447693824_Minsk_likes.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+    [path_to_pybot,
      '--test', '375298462344_Minsk_likes',
      '--output', 'output_375298462344_Minsk_likes.xml',
      '--report', 'report_375298462344_Minsk_likes.html',
      '--log', 'log_375298462344_Minsk_likes.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+    [path_to_pybot,
      '--test', '375298360265_Minsk_likes',
      '--output', 'output_375298360265_Minsk_likes.xml',
      '--report', 'report_375298360265_Minsk_likes.html',
      '--log', 'log_375298360265_Minsk_likes.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+    [path_to_pybot,
+     '--test', '375445528788_Minsk_likes',
+     '--output', 'output_375445528788_Minsk_likes.xml',
+     '--report', 'report_375445528788_Minsk_likes.html',
+     '--log', 'log_375445528788_Minsk_likes.html', path_to_test1],
+    [path_to_pybot,
      '--test', 'Bone_Minsk_likes_engaged',
      '--output', 'output_Bone_Minsk_likes_engaged.xml',
      '--report', 'report_Bone_Minsk_likes_engaged.html',
      '--log', 'log_Bone_Minsk_likes_engaged.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
+    [path_to_pybot,
      '--test', 'Prichello_Minsk_likes_engaged',
      '--output', 'output_Prichello_Minsk_likes_engaged.xml',
      '--report', 'report_Prichello_Minsk_likes_engaged.html',
      '--log', 'log_Prichello_Minsk_likes_engaged.html', path_to_test1]
 ]
 exec_commands(commands)
-print "Merge test reports"
-rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
-      'output_375298681142_Minsk_likes.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
-      'output_375447693824_Minsk_likes.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
-      'output_375298462344_Minsk_likes.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
-      'output_375298360265_Minsk_likes.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
-      'output_Bone_Minsk_likes_engaged.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/'
-      'output_Prichello_Minsk_likes_engaged.xml',
-      report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes'
-             '/report_add_likes.html',
-      log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes'
-          '/log_add_likes.html',
-      xunit='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/likes/robotxunit.xml')
+os.path.join(path_to_tests, 'reports{sep}likes{sep}robotxunit.xml'.format(sep=os.sep))
+rebot(os.path.join(path_to_tests, 'output_375298681142_Minsk_likes.xml'),
+      os.path.join(path_to_tests, 'output_375447693824_Minsk_likes.xml'),
+      os.path.join(path_to_tests, 'output_375298462344_Minsk_likes.xml'),
+      os.path.join(path_to_tests, 'output_375298360265_Minsk_likes.xml'),
+      os.path.join(path_to_tests, 'output_375445528788_Minsk_likes.xml'),
+      os.path.join(path_to_tests, 'output_Bone_Minsk_likes_engaged.xml'),
+      os.path.join(path_to_tests, 'output_Prichello_Minsk_likes_engaged.xml'),
+      report=os.path.join(path_to_tests, 'reports{sep}likes{sep}report_add_likes.html'.format(sep=os.sep)),
+      log=os.path.join(path_to_tests, 'reports{sep}likes{sep}log_add_likes.html'.format(sep=os.sep)),
+      xunit=os.path.join(path_to_tests, 'reports{sep}likes{sep}robotxunit.xml'.format(sep=os.sep)))
