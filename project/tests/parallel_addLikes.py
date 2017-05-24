@@ -77,13 +77,13 @@ commands = [
      '--log',       'reports/likes/tmp/log_Prichello_Minsk_likes_engaged.html', path_to_test1]
 ]
 exec_commands(commands)
-rebot(os.path.join(path_to_tests, 'reports/likes/tmp/output_375298681142_Minsk_likes.xml'),
-      os.path.join(path_to_tests, 'reports/likes/tmp/output_375447693824_Minsk_likes.xml'),
-      os.path.join(path_to_tests, 'reports/likes/tmp/output_375298462344_Minsk_likes.xml'),
-      os.path.join(path_to_tests, 'reports/likes/tmp/output_375298360265_Minsk_likes.xml'),
-      os.path.join(path_to_tests, 'reports/likes/tmp/output_375445528788_Minsk_likes.xml'),
-      os.path.join(path_to_tests, 'reports/likes/tmp/output_Bone_Minsk_likes_engaged.xml'),
-      os.path.join(path_to_tests, 'reports/likes/tmp/output_Prichello_Minsk_likes_engaged.xml'),
-      report=os.path.join(path_to_tests, 'reports{sep}likes{sep}report_add_likes.html'.format(sep=os.sep)),
-      log=os.path.join(path_to_tests, 'reports{sep}likes{sep}log_add_likes.html'.format(sep=os.sep)),
-      xunit=os.path.join(path_to_tests, 'reports{sep}likes{sep}robotxunit.xml'.format(sep=os.sep)))
+rebot(os.path.join(path_to_tests,           'reports/likes/tmp/output_375298681142_Minsk_likes.xml'),
+      os.path.join(path_to_tests,           'reports/likes/tmp/output_375447693824_Minsk_likes.xml'),
+      os.path.join(path_to_tests,           'reports/likes/tmp/output_375298462344_Minsk_likes.xml'),
+      os.path.join(path_to_tests,           'reports/likes/tmp/output_375298360265_Minsk_likes.xml'),
+      os.path.join(path_to_tests,           'reports/likes/tmp/output_375445528788_Minsk_likes.xml'),
+      os.path.join(path_to_tests,           'reports/likes/tmp/output_Bone_Minsk_likes_engaged.xml'),
+      os.path.join(path_to_tests,           'reports/likes/tmp/output_Prichello_Minsk_likes_engaged.xml'),
+      report=os.path.join(path_to_tests,    'reports/likes/report_add_likes.html'),
+      log=os.path.join(path_to_tests,       'reports/likes/log_add_likes.html'),
+      xunit=os.path.join(path_to_tests,     'reports/likes/robotxunit.xml'))
