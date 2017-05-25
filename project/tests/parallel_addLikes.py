@@ -84,6 +84,6 @@ rebot(os.path.join(path_to_tests,           'reports/likes/tmp/output_3752986811
       os.path.join(path_to_tests,           'reports/likes/tmp/output_375445528788_Minsk_likes.xml'),
       os.path.join(path_to_tests,           'reports/likes/tmp/output_Bone_Minsk_likes_engaged.xml'),
       os.path.join(path_to_tests,           'reports/likes/tmp/output_Prichello_Minsk_likes_engaged.xml'),
-      report=os.path.join(path_to_tests,    'reports/likes/report_add_likes.html'),
-      log=os.path.join(path_to_tests,       'reports/likes/log_add_likes.html'),
-      xunit=os.path.join(path_to_tests,     'reports/likes/robotxunit.xml'))
+      report=os.path.join(path_to_tests,    'report_add_likes.html'),
+      log=os.path.join(path_to_tests,       'log_add_likes.html'),
+      xunit=os.path.join(path_to_tests,     'robotxunit.xml'))
