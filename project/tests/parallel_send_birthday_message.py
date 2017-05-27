@@ -72,7 +72,4 @@ rebot(os.path.join(path_to_tests,           'reports/message/tmp/output_37529846
       os.path.join(path_to_tests,           'reports/message/tmp/output_375298360265_Minsk_mes_30.xml'),
       os.path.join(path_to_tests,           'reports/message/tmp/output_375298681142_Minsk_mes_29.xml'),
       os.path.join(path_to_tests,           'reports/message/tmp/output_375447693824_Minsk_mes_28.xml'),
-      os.path.join(path_to_tests,           'reports/message/tmp/output_375445528788_Minsk_mes_27.xml'),
-      report=os.path.join(path_to_tests,    'reports/message/tmp/report_send_birthday_message.html'),
-      log=os.path.join(path_to_tests,       'reports/message/tmp/log_send_birthday_message.html'),
-      xunit=os.path.join(path_to_tests,     'reports/message/tmp/robotxunit.xml'))
+      os.path.join(path_to_tests,           'reports/message/tmp/output_375445528788_Minsk_mes_27.xml'))
