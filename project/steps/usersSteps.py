@@ -30,25 +30,34 @@ def detete_more_10_weeks_last_seen_users(users):
 
 
 def search_birthday_users(account_id,
-                          count=500,
+                          count=30,
+                          offset=0,
+                          status=None,
                           city=282,
                           sex=1,
                           age_from=19,
-                          age_to=49):
-    date_now = datetime.datetime.now()
-    day_now = date_now.day
-    month_now = date_now.month
-    return UsersApi(account_id).search(count=count,
-                                       city=city,
-                                       sex=sex,
-                                       age_from=age_from,
-                                       age_to=age_to,
-                                       birth_day=day_now,
-                                       birth_month=month_now)
+                          age_to=49,
+                          timedelta=0):
+    date = datetime.datetime.now() + datetime.timedelta(days=int(timedelta))
+    day_now = date.day
+    month_now = date.month
+    users = UsersApi(account_id).search(count=count,
+                                        offset=offset,
+                                        status=status,
+                                        city=city,
+                                        sex=sex,
+                                        age_from=age_from,
+                                        age_to=age_to,
+                                        birth_day=day_now,
+                                        birth_month=month_now)
+    for user in users:
+        print user
+    return users
 
 
-def search_users_minsk(account_id, count=1000, status=None, age_from=19, age_to=49):
+def search_users_minsk(account_id, count=1000, offset=0, status=None, age_from=19, age_to=49):
     return UsersApi(account_id).search(count=count,
+                                       offset=offset,
                                        city=282,
                                        sex=1,
                                        status=status,
@@ -76,5 +85,5 @@ def get_user_by_id(account_id, user_id):
     return UsersApi(account_id).get(user_id)
 
 
-# users = search_users_minsk(account_id='310582170')
-# print len(users)
+    # users = search_users_minsk(account_id='310582170')
+    # print len(users)

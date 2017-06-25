@@ -40,12 +40,12 @@ template = '::[{file_name} => {module_name}]::'
 
 def log_step(number, message):
     log.info("\n")
-    log_info(":::::::::: {number}. {message} ::::::::::".format(number=number,
+    log_info(u":::::::::: {number}. {message} ::::::::::".format(number=number,
                                                                 message=message))
 
 
 def log_info(message):
-    log.info('{template:<50} {message}'.format(template=template.format(module_name=inspect.stack()[1][3],
+    log.info(u'{template:<50} {message}'.format(template=template.format(module_name=inspect.stack()[1][3],
                                                                         file_name=os.path.split(inspect.stack()[1][1])[
                                                                             1]),
                                                message=message))
@@ -62,5 +62,5 @@ def error(message):
 
 
 def end_log():
-    log.info(":::::::::: END LOG ::::::::::")
+    log.info(u":::::::::: END LOG ::::::::::")
     log.info("\n\n")

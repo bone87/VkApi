@@ -12,7 +12,7 @@ class UsersApi(BaseApi):
         super(UsersApi, self).__init__()
         self.token = parse_value_from_users_tokens()[account_id]
 
-    def search(self, count, city, sex, age_from, age_to, status=None, birth_day=None, birth_month=None):
+    def search(self, count, city, sex, age_from, age_to, offset=None, status=None, birth_day=None, birth_month=None):
         """
         Возвращает список пользователей в соответствии с заданным критерием поиска.
         После успешного выполнения возвращает объект, содержащий число результатов
@@ -24,6 +24,7 @@ class UsersApi(BaseApi):
         url = '{api}users.search'.format(api=self.api_url)
         params = {'city': city,
                   'sort': '0',
+                  'offset': offset,
                   'count': count,
                   'fields': 'can_write_private_message, last_seen, has_photo, photo_id, blacklisted, friend_status',
                   'sex': sex,

@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+import os
 import time
 from subprocess import Popen, list2cmdline
 
+import sys
+
+import datetime
 from robot import rebot
 
 
@@ -29,40 +33,51 @@ def exec_commands(cmds):
             time.sleep(0.05)
 
 
-path_to_test1 = '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/send_birthday_message.robot'
+path_to_pybot_unix = '/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot'
+path_to_pybot_win = 'c:/Python27/Scripts/pybot.bat'
+if sys.platform == 'win32':
+    path_to_pybot = path_to_pybot_win
+else:
+    path_to_pybot = path_to_pybot_unix
+path_to_tests = os.path.abspath(os.path.dirname(__file__))
+path_to_test1 = os.path.join(path_to_tests, 'send_birthday_message_even.robot')
+
 commands = [
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
-        '--test', '+375298681142_Minsk_28',
-        '--output', 'output_375298681142_Minsk_28.xml',
-        '--report', 'report_375298681142_Minsk_28.html',
-        '--log', 'log_375298681142_Minsk_28.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
-        '--test', '+375447693824_Minsk_29',
-        '--output', 'output_375447693824_Minsk_29.xml',
-        '--report', 'report_375447693824_Minsk_29.html',
-        '--log', 'log_375447693824_Minsk_29.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
-        '--test', '+375298462344_Minsk_32',
-        '--output', 'output_375298462344_Minsk_32.xml',
-        '--report', 'report_375298462344_Minsk_32.html',
-        '--log', 'log_375298462344_Minsk_32.html', path_to_test1],
-    ['/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot',
-        '--test', '+375298360265_Minsk_33',
-        '--output', 'output_375298360265_Minsk_33.xml',
-        '--report', 'report_375298360265_Minsk_33.html',
-        '--log', 'log_375298360265_Minsk_33.html', path_to_test1],
+    [path_to_pybot,
+     '--test', '375298462344_Minsk_offset_150',
+     '--output', 'reports/message/tmp/output_375298462344_Minsk_offset_150.xml',
+     '--report', 'reports/message/tmp/report_375298462344_Minsk_offset_150.html',
+     '--log', 'reports/message/tmp/log_375298462344_Minsk_offset_150.html', path_to_test1],
+    [path_to_pybot,
+     '--test', '375298360265_Minsk_offset_180',
+     '--output', 'reports/message/tmp/output_375298360265_Minsk_offset_180.xml',
+     '--report', 'reports/message/tmp/report_375298360265_Minsk_offset_180.html',
+     '--log', 'reports/message/tmp/log_375298360265_Minsk_offset_180.html', path_to_test1],
+    [path_to_pybot,
+     '--test', '375298681142_Minsk_offset_210',
+     '--output', 'reports/message/tmp/output_375298681142_Minsk_offset_210.xml',
+     '--report', 'reports/message/tmp/report_375298681142_Minsk_offset_210.html',
+     '--log', 'reports/message/tmp/log_375298681142_Minsk_offset_210.html', path_to_test1],
+    [path_to_pybot,
+     '--test', '375447693824_Minsk_offset_240',
+     '--output', 'reports/message/tmp/output_375447693824_Minsk_offset_240.xml',
+     '--report', 'reports/message/tmp/report_375447693824_Minsk_offset_240.html',
+     '--log', 'reports/message/tmp/log_375447693824_Minsk_offset_240.html', path_to_test1],
+    [path_to_pybot,
+     '--test', '375445528788_Minsk_offset_270',
+     '--output', 'reports/message/tmp/output_375445528788_Minsk_offset_270.xml',
+     '--report', 'reports/message/tmp/report_375445528788_Minsk_offset_270.html',
+     '--log', 'reports/message/tmp/log_375445528788_Minsk_offset_270.html', path_to_test1],
 ]
 exec_commands(commands)
-print "Merge test reports"
-rebot('/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/output_'
-      '375298462344_Minsk_32.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/output_'
-      '375298360265_Minsk_33.xml',
-      '375298681142_Minsk_28.xml',
-      '/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/output_'
-      '375447693824_Minsk_29.xml',
-      report='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message'
-             '/report_send_birthday_message_evening.html',
-      log='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message'
-          '/log_send_birthday_message_evening.html',
-      xunit='/home/ITRANSITION.CORP/e.bondarenko/My_projects/VkApi/project/tests/reports/message/robotxunit.xml')
+rebot(os.path.join(path_to_tests, 'reports/message/tmp/output_375298462344_Minsk_offset_150.xml'),
+      os.path.join(path_to_tests, 'reports/message/tmp/output_375298360265_Minsk_offset_180.xml'),
+      os.path.join(path_to_tests, 'reports/message/tmp/output_375298681142_Minsk_offset_210.xml'),
+      os.path.join(path_to_tests, 'reports/message/tmp/output_375447693824_Minsk_offset_240.xml'),
+      os.path.join(path_to_tests, 'reports/message/tmp/output_375445528788_Minsk_offset_270.xml'),
+      report=os.path.join(path_to_tests, 'reports/message/report_{pref_data}_send_birthday_even.html'.format(
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S"))),
+      log=os.path.join(path_to_tests, 'reports/message/log_{pref_data}_send_birthday_even.html'.format(
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S"))),
+      xunit=os.path.join(path_to_tests, 'reports/message/robotxunit_{pref_data}_birthday_message_even.xml').format(
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S")))
