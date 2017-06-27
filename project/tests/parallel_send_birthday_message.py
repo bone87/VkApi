@@ -68,6 +68,11 @@ commands = [
      '--output', 'reports/message/tmp/output_375445528788_Minsk_offset_120.xml',
      '--report', 'reports/message/tmp/report_375445528788_Minsk_offset_120.html',
      '--log', 'reports/message/tmp/log_375445528788_Minsk_offset_120.html', path_to_test1],
+    [path_to_pybot,
+     '--test', '375336610743_Minsk_offset_150',
+     '--output', 'reports/message/tmp/output_375336610743_Minsk_offset_150.xml',
+     '--report', 'reports/message/tmp/report_375336610743_Minsk_offset_150.html',
+     '--log', 'reports/message/tmp/log_375336610743_Minsk_offset_150.html', path_to_test1],
 ]
 exec_commands(commands)
 rebot(os.path.join(path_to_tests, 'reports/message/tmp/output_375298462344_Minsk_offset_0.xml'),
@@ -75,6 +80,7 @@ rebot(os.path.join(path_to_tests, 'reports/message/tmp/output_375298462344_Minsk
       os.path.join(path_to_tests, 'reports/message/tmp/output_375298681142_Minsk_offset_60.xml'),
       os.path.join(path_to_tests, 'reports/message/tmp/output_375447693824_Minsk_offset_90.xml'),
       os.path.join(path_to_tests, 'reports/message/tmp/output_375445528788_Minsk_offset_120.xml'),
+      os.path.join(path_to_tests, 'reports/message/tmp/output_375336610743_Minsk_offset_150.xml'),
       report=os.path.join(path_to_tests, 'reports/message/report_{pref_data}_send_birthday.html'.format(
           pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S"))),
       log=os.path.join(path_to_tests, 'reports/message/log_{pref_data}_send_birthday.html'.format(
