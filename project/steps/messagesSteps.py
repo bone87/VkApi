@@ -41,7 +41,7 @@ def send_birthday_messages(account_id,
         result = send_birthday_message(account_id=account_id,
                                        user_model=birthday_user)
         if result is not None:
-            random_seconds = get_random_int(500, 600)
+            random_seconds = get_random_int(200, 300)
             log_info('   {message}: {count}.'.format(message='Отправлено',
                                                      count=count))
             sleep(random_seconds)
