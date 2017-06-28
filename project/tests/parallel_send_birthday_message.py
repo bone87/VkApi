@@ -82,8 +82,8 @@ rebot(os.path.join(path_to_tests, 'reports/message/tmp/output_375298462344_Minsk
       os.path.join(path_to_tests, 'reports/message/tmp/output_375445528788_Minsk_offset_120.xml'),
       os.path.join(path_to_tests, 'reports/message/tmp/output_375336610743_Minsk_offset_150.xml'),
       report=os.path.join(path_to_tests, 'reports/message/report_{pref_data}_send_birthday.html'.format(
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S"))),
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
       log=os.path.join(path_to_tests, 'reports/message/log_{pref_data}_send_birthday.html'.format(
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S"))),
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
       xunit=os.path.join(path_to_tests, 'reports/message/robotxunit_{pref_data}_birthday_message.xml'.format(
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S"))))
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))

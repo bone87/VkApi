@@ -19,6 +19,7 @@ ${status_engaged} =  3
 
 *** Test Cases ***
 375298681142_Minsk_likes
+    BuiltIn.Sleep    2
     ${users} =       Search Birthday Users    account_id=${ff_account_375298681142}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -29,6 +30,7 @@ ${status_engaged} =  3
 
 
 375447693824_Minsk_likes
+    BuiltIn.Sleep    4
     ${users} =       Search Birthday Users    account_id=${ff_account_375447693824}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -38,6 +40,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 375298462344_Minsk_likes
+    BuiltIn.Sleep    6
     ${users} =       Search Birthday Users    account_id=${account_375298462344}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -47,6 +50,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 375298360265_Minsk_likes
+    BuiltIn.Sleep    8
     ${users} =       Search Birthday Users    account_id=${account_375298360265}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -56,6 +60,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 375445528788_Minsk_likes
+    BuiltIn.Sleep    10
     ${users} =       Search Birthday Users    account_id=${ff_account_375445528788}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -65,6 +70,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 Bone_Minsk_likes_engaged
+    BuiltIn.Sleep    12
     ${users} =       Search Birthday Users    account_id=${account_bone}
     ...                                       count=1000
     ...                                       timedelta=${timedelta}
@@ -75,6 +81,7 @@ Bone_Minsk_likes_engaged
     ...                                       users=${users}
 
 Prichello_Minsk_likes_engaged
+    BuiltIn.Sleep    14
     ${users} =       Search Birthday Users    account_id=${account_prichello}
     ...                                       count=1000
     ...                                       timedelta=${timedelta}

@@ -13,41 +13,46 @@ ${age_from} =  29
 ${age_to} =  34
 
 *** Test Cases ***
-375298462344_Minsk_offset_150
+375298462344_Minsk_offset_180
     ${users}=    Search Birthday Users    account_id=${opera_account}
-    ...                                   offset=150
+    BuiltIn.Sleep                         2
+    ...                                   offset=180
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
     Send Birthday Messages                account_id=${opera_account}
     ...                                   users=${users}
 
-375298360265_Minsk_offset_180
+375298360265_Minsk_offset_210
     ${users}=    Search Birthday Users    account_id=${ff_account}
-    ...                                   offset=180
+    BuiltIn.Sleep                         4
+    ...                                   offset=210
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
     Send Birthday Messages                account_id=${ff_account}
     ...                                   users=${users}
 
-375298681142_Minsk_offset_210
+375298681142_Minsk_offset_240
     ${users}=    Search Birthday Users    account_id=${ff_account_375298681142}
-    ...                                   offset=210
+    BuiltIn.Sleep                         6
+    ...                                   offset=240
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
     Send Birthday Messages                account_id=${ff_account_375298681142}
     ...                                   users=${users}
 
-375447693824_Minsk_offset_240
+375447693824_Minsk_offset_270
     ${users}=    Search Birthday Users    account_id=${ff_account_375447693824}
-    ...                                   offset=240
+    BuiltIn.Sleep                         8
+    ...                                   offset=270
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
     Send Birthday Messages                account_id=${ff_account_375447693824}
     ...                                   users=${users}
 
-375445528788_Minsk_offset_270
+375445528788_Minsk_offset_300
     ${users}=    Search Birthday Users    account_id=${ff_account_375445528788}
-    ...                                   offset=270
+    BuiltIn.Sleep                         10
+    ...                                   offset=300
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
     Send Birthday Messages                account_id=${ff_account_375445528788}
