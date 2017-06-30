@@ -36,8 +36,8 @@ def likes_users_photo_account(account_id, users):
     count_all_users_with_photo = len(users)
     log_info('Найдено {len} чел.'.format(len=len(users)))
     count = 1
-    limit = get_random_int(120, 140)
-    limit = 1
+    limit = get_random_int(70, 90)
+    # limit = 1
     while count < limit and len(users) >= 1:
         random_index = random.randint(0, len(users) - 1)
         user = users.pop(random_index)
