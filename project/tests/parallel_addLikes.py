@@ -93,8 +93,8 @@ rebot(os.path.join(path_to_tests,           'reports/likes/tmp/output_3752986811
       os.path.join(path_to_tests,           'reports/likes/tmp/output_Bone_Minsk_likes_engaged.xml'),
       os.path.join(path_to_tests,           'reports/likes/tmp/output_Prichello_Minsk_likes_engaged.xml'),
       report=os.path.join(path_to_tests, 'reports/likes/report_{pref_data}_add_likes.html'.format(
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S"))),
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
       log=os.path.join(path_to_tests, 'reports/likes/log_{pref_data}_add_likes.html'.format(
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S"))),
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
       xunit=os.path.join(path_to_tests, 'reports/likes/robotxunit_{pref_data}_add_likes.xml').format(
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d_%H-%m-%S")))
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d")))
