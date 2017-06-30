@@ -15,8 +15,8 @@ ${age_to} =  34
 
 *** Test Cases ***
 375298462344_Minsk_offset_180
-    ${users}=    Search Birthday Users    account_id=${opera_account}
     BuiltIn.Sleep                         2
+    ${users}=    Search Birthday Users    account_id=${opera_account}
     ...                                   offset=180
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
@@ -24,8 +24,8 @@ ${age_to} =  34
     ...                                   users=${users}
 
 375298360265_Minsk_offset_210
-    ${users}=    Search Birthday Users    account_id=${ff_account}
     BuiltIn.Sleep                         4
+    ${users}=    Search Birthday Users    account_id=${ff_account}
     ...                                   offset=210
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
@@ -33,8 +33,8 @@ ${age_to} =  34
     ...                                   users=${users}
 
 375298681142_Minsk_offset_240
-    ${users}=    Search Birthday Users    account_id=${ff_account_375298681142}
     BuiltIn.Sleep                         6
+    ${users}=    Search Birthday Users    account_id=${ff_account_375298681142}
     ...                                   offset=240
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
@@ -42,8 +42,8 @@ ${age_to} =  34
     ...                                   users=${users}
 
 375447693824_Minsk_offset_270
-    ${users}=    Search Birthday Users    account_id=${ff_account_375447693824}
     BuiltIn.Sleep                         8
+    ${users}=    Search Birthday Users    account_id=${ff_account_375447693824}
     ...                                   offset=270
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
@@ -51,8 +51,8 @@ ${age_to} =  34
     ...                                   users=${users}
 
 375445528788_Minsk_offset_300
-    ${users}=    Search Birthday Users    account_id=${ff_account_375445528788}
     BuiltIn.Sleep                         10
+    ${users}=    Search Birthday Users    account_id=${ff_account_375445528788}
     ...                                   offset=300
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
