@@ -85,13 +85,13 @@ commands = [
      '--log',       'reports/likes/tmp/log_Prichello_Minsk_likes_engaged.html', path_to_test1]
 ]
 exec_commands(commands)
-rebot(os.path.join(path_to_tests,           'reports/likes/tmp/output_375298681142_Minsk_likes.xml'),
-      os.path.join(path_to_tests,           'reports/likes/tmp/output_375447693824_Minsk_likes.xml'),
-      os.path.join(path_to_tests,           'reports/likes/tmp/output_375298462344_Minsk_likes.xml'),
-      os.path.join(path_to_tests,           'reports/likes/tmp/output_375298360265_Minsk_likes.xml'),
-      os.path.join(path_to_tests,           'reports/likes/tmp/output_375445528788_Minsk_likes.xml'),
-      os.path.join(path_to_tests,           'reports/likes/tmp/output_Bone_Minsk_likes_engaged.xml'),
-      os.path.join(path_to_tests,           'reports/likes/tmp/output_Prichello_Minsk_likes_engaged.xml'),
+rebot('c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/likes/tmp/output_375298681142_Minsk_likes.xml',
+      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/likes/tmp/output_375447693824_Minsk_likes.xml',
+      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/likes/tmp/output_375298462344_Minsk_likes.xml',
+      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/likes/tmp/output_375298360265_Minsk_likes.xml',
+      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/likes/tmp/output_375445528788_Minsk_likes.xml',
+      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/likes/tmp/output_Bone_Minsk_likes_engaged.xml',
+      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/likes/tmp/output_Prichello_Minsk_likes_engaged.xml',
       report=os.path.join(path_to_tests, 'reports/likes/report_{pref_data}_add_likes.html'.format(
           pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
       log=os.path.join(path_to_tests, 'reports/likes/log_{pref_data}_add_likes.html'.format(
