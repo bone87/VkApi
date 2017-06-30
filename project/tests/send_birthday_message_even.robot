@@ -9,6 +9,7 @@ ${ff_account} =  291495044
 ${ff_account_375298681142} =  286454976
 ${ff_account_375447693824} =  286454510
 ${ff_account_375445528788} =  280826200
+${ff_account_375336610743} =  291476922
 ${age_from} =  29
 ${age_to} =  34
 
@@ -59,3 +60,11 @@ ${age_to} =  34
     ...                                   users=${users}
 
 
+375336610743_Minsk_offset_330
+    BuiltIn.Sleep                         12
+    ${users}=    Search Birthday Users    account_id=${ff_account_375336610743}
+    ...                                   offset=330
+    ...                                   age_from=${age_from}
+    ...                                   age_to=${age_to}
+    Send Birthday Messages                account_id=${ff_account_375336610743}
+    ...                                   users=${users}
