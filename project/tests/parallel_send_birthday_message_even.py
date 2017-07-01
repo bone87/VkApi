@@ -8,6 +8,8 @@ import sys
 import datetime
 from robot import rebot
 
+from framework.utils.email_sender import send_email_with_attach
+
 
 def exec_commands(cmds):
     """ Exec commands in parallel
@@ -87,3 +89,6 @@ rebot('c:/TeamCity/buildAgent/work/9cdec29a07707965/reports/message/tmp/output_3
           pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
       xunit=os.path.join(path_to_tests, 'reports/message/robotxunit_{pref_data}_birthday_message_even.xml').format(
           pref_data=datetime.datetime.now().strftime("%Y-%m-%d")))
+send_email_with_attach("send_birthday_message_even",
+                       os.path.join(path_to_tests, 'reports/message/log_{pref_data}_send_birthday_even.html'.format(
+                           pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
