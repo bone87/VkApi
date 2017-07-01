@@ -75,6 +75,11 @@ commands = [
      '--output', 'reports/message/tmp/output_375336610743_Minsk_offset_150.xml',
      '--report', 'reports/message/tmp/report_375336610743_Minsk_offset_150.html',
      '--log', 'reports/message/tmp/log_375336610743_Minsk_offset_150.html', path_to_test1],
+    [path_to_pybot,
+     '--test', '375292025693_Minsk_offset_180',
+     '--output', 'reports/message/tmp/output_375292025693_Minsk_offset_180.xml',
+     '--report', 'reports/message/tmp/report_375292025693_Minsk_offset_180.html',
+     '--log', 'reports/message/tmp/log_375292025693_Minsk_offset_180.html', path_to_test1],
 ]
 exec_commands(commands)
 rebot('c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375298462344_Minsk_offset_0.xml',
@@ -83,6 +88,7 @@ rebot('c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_3
       'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375447693824_Minsk_offset_90.xml',
       'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375445528788_Minsk_offset_120.xml',
       'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375336610743_Minsk_offset_150.xml',
+      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375292025693_Minsk_offset_180.xml',
       report=os.path.join(path_to_tests, 'reports/message/report_{pref_data}_send_birthday.html'.format(
           pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
       log=os.path.join(path_to_tests, 'reports/message/log_{pref_data}_send_birthday.html'.format(
