@@ -9,42 +9,53 @@ path_to_tests = os.path.abspath(os.path.dirname(__file__))
 path_to_test1 = os.path.join(path_to_tests, 'send_birthday_message.robot')
 path_to_output = os.path.join(path_to_tests, 'reports{sep}message{sep}tmp{sep}'.format(sep=os.sep))
 
-commands = [
-    [path_to_pybot,
-     '--test', '375298462344_Minsk_offset_0',
-     '--output', os.path.join(path_to_output, 'output_375298462344_Minsk_offset_0.xml'),
-     path_to_test1],
-
-    [path_to_pybot,
-     '--test', '375298360265_Minsk_offset_30',
-     '--output', os.path.join(path_to_output, 'output_375298360265_Minsk_offset_30.xml'),
-     path_to_test1],
-
-    [path_to_pybot,
-     '--test', '375298681142_Minsk_offset_60',
-     '--output', os.path.join(path_to_output, 'output_375298681142_Minsk_offset_60.xml'),
-     path_to_test1],
-
-    [path_to_pybot,
-     '--test', '375447693824_Minsk_offset_90',
-     '--output', os.path.join(path_to_output, 'output_375447693824_Minsk_offset_90.xml'),
-     path_to_test1],
-
-    [path_to_pybot,
-     '--test', '375445528788_Minsk_offset_120',
-     '--output', os.path.join(path_to_output, 'output_375445528788_Minsk_offset_120.xml'),
-     path_to_test1],
-
-    [path_to_pybot,
-     '--test', '375336610743_Minsk_offset_150',
-     '--output', os.path.join(path_to_output, 'output_375336610743_Minsk_offset_150.xml'),
-     path_to_test1],
-
-    [path_to_pybot,
-     '--test', '375292025693_Minsk_offset_180',
-     '--output', os.path.join(path_to_output, 'output_375292025693_Minsk_offset_180.xml'),
-     path_to_test1],
-]
+# commands = [
+#     [path_to_pybot,
+#      '--test', '375298462344_Minsk_offset_0',
+#      '--output', os.path.join(path_to_output, 'output_375298462344_Minsk_offset_0.xml'),
+#      path_to_test1],
+#
+#     [path_to_pybot,
+#      '--test', '375298360265_Minsk_offset_30',
+#      '--output', os.path.join(path_to_output, 'output_375298360265_Minsk_offset_30.xml'),
+#      path_to_test1],
+#
+#     [path_to_pybot,
+#      '--test', '375298681142_Minsk_offset_60',
+#      '--output', os.path.join(path_to_output, 'output_375298681142_Minsk_offset_60.xml'),
+#      path_to_test1],
+#
+#     [path_to_pybot,
+#      '--test', '375447693824_Minsk_offset_90',
+#      '--output', os.path.join(path_to_output, 'output_375447693824_Minsk_offset_90.xml'),
+#      path_to_test1],
+#
+#     [path_to_pybot,
+#      '--test', '375445528788_Minsk_offset_120',
+#      '--output', os.path.join(path_to_output, 'output_375445528788_Minsk_offset_120.xml'),
+#      path_to_test1],
+#
+#     [path_to_pybot,
+#      '--test', '375336610743_Minsk_offset_150',
+#      '--output', os.path.join(path_to_output, 'output_375336610743_Minsk_offset_150.xml'),
+#      path_to_test1],
+#
+#     [path_to_pybot,
+#      '--test', '375292025693_Minsk_offset_180',
+#      '--output', os.path.join(path_to_output, 'output_375292025693_Minsk_offset_180.xml'),
+#      path_to_test1],
+# ]
+commands = generate_commands(tests=['375298462344_Minsk_offset_0',
+                                    '375298360265_Minsk_offset_30',
+                                    '375298681142_Minsk_offset_60',
+                                    '375447693824_Minsk_offset_90',
+                                    '375445528788_Minsk_offset_120',
+                                    '375336610743_Minsk_offset_150',
+                                    '375292025693_Minsk_offset_180',
+                                    ],
+                             path_to_pybot=path_to_pybot,
+                             path_to_output=path_to_output,
+                             path_to_tests=path_to_test1)
 exec_commands(commands)
 rebot(os.path.join(path_to_output, 'output_375298462344_Minsk_offset_0.xml'),
       os.path.join(path_to_output, 'output_375298360265_Minsk_offset_30.xml'),

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 import time
 from subprocess import Popen, list2cmdline
 import sys
@@ -28,9 +29,16 @@ def exec_commands(cmds):
             time.sleep(0.05)
 
 
-# path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'reports{sep}likes{sep}tmp'.format(sep=os.sep))
-# if os.path.exists(path):
-#     shutil.rmtree(path)
+def generate_commands(tests, path_to_pybot, path_to_output, path_to_tests):
+    commands = []
+    for test in tests:
+        commands.append([path_to_pybot,
+                         '--test',
+                         str(test),
+                         '--output',
+                         os.path.join(path_to_output, 'output_{test_name}.xml'.format(test_name=test)),
+                         path_to_tests])
+    return commands
 
 path_to_pybot_unix = '/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot'
 path_to_pybot_win = 'c:/Python27/Scripts/pybot.bat'
