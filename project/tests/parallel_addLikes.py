@@ -44,13 +44,13 @@ else:
     path_to_pybot = path_to_pybot_unix
 path_to_tests = os.path.abspath(os.path.dirname(__file__))
 path_to_test1 = os.path.join(path_to_tests, 'add_likes.robot')
+path_to_output = os.path.join(path_to_tests, 'reports/likes/tmp/')
 
 commands = [
     [path_to_pybot,
      '--test', '375298681142_Minsk_likes',
-     '--output', os.path.join(path_to_tests, 'reports/likes/tmp/output_375298681142_Minsk_likes.xml'),
-     '--report', 'reports/likes/tmp/report_375298681142_Minsk_likes.html',
-     '--log', 'reports/likes/tmp/log_375298681142_Minsk_likes.html', path_to_test1],
+     '--output', os.path.join(path_to_tests, 'output_375298681142_Minsk_likes.xml'),
+     path_to_test1],
     # [path_to_pybot,
     #  '--test', '375447693824_Minsk_likes',
     #  '--output', 'reports/likes/tmp/output_375447693824_Minsk_likes.xml',
@@ -88,7 +88,7 @@ commands = [
     #  '--log', 'reports/likes/tmp/log_Prichello_Minsk_likes_engaged.html', path_to_test1]
 ]
 exec_commands(commands)
-rebot(os.path.join(path_to_tests,           'reports/likes/tmp/output_375298681142_Minsk_likes.xml'),
+rebot(os.path.join(path_to_output,           'output_375298681142_Minsk_likes.xml'),
       # 'c:/TeamCity/buildAgent/work/c5b3fb5b1ac0d88e/reports/likes/tmp/output_375447693824_Minsk_likes.xml',
       # 'c:/TeamCity/buildAgent/work/c5b3fb5b1ac0d88e/reports/likes/tmp/output_375298462344_Minsk_likes.xml',
       # 'c:/TeamCity/buildAgent/work/c5b3fb5b1ac0d88e/reports/likes/tmp/output_375298360265_Minsk_likes.xml',
