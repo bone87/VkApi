@@ -2,8 +2,7 @@
 Documentation    Suite description
 Library  ../steps/usersSteps.py
 Library  ../steps/likesSteps.py
-Library  ../../framework/utils/email_sender.py
-Suite Teardown  Teardown Suite
+Suite Teardown
 
 *** Variables ***
 ${account_375298462344} =  310582170
@@ -114,7 +113,3 @@ Prichello_Minsk_likes_engaged
     ...                                       status=${status_engaged}
     Likes Users Photo Account                 account_id=${account_prichello}
     ...                                       users=${users}
-
-*** Keywords ***
-Teardown Suite
-    Send Log

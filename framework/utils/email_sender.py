@@ -5,7 +5,7 @@ import smtplib
 import datetime
 
 
-def send_email_with_attach(subject, attached_file, recipien="87bone@gmail.com", ):
+def send_email_with_attach(subject, attached_file, recipien="87bone@gmail.com",):
     msg = MIMEMultipart()
     msg['From'] = 'useru009@gmail.com'
     msg['To'] = recipien
@@ -20,10 +20,3 @@ def send_email_with_attach(subject, attached_file, recipien="87bone@gmail.com", 
     server.starttls()
     server.login("useru009@gmail.com", "gmail4rever")
     server.sendmail(msg['From'], recipien, msg.as_string())
-
-
-def send_log():
-    send_email_with_attach(
-        attached_file='C:/!Git/VkApi/project/tests/reports/likes/log_{pref_data}_add_likes.html'.format(
-            pref_data=datetime.datetime.now().strftime("%Y-%m-%d")),
-        subject="add_likes")
