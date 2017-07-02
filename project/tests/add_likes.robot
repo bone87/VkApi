@@ -21,7 +21,7 @@ ${status_engaged} =  3
 
 *** Test Cases ***
 375298681142_Minsk_likes
-    BuiltIn.Sleep    2
+    # BuiltIn.Sleep    2
     ${users} =       Search Birthday Users    account_id=${ff_account_375298681142}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -31,84 +31,84 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 
-375447693824_Minsk_likes
-    BuiltIn.Sleep    4
-    ${users} =       Search Birthday Users    account_id=${ff_account_375447693824}
-    ...                                       timedelta=${timedelta}
-    ...                                       count=1000
-    ...                                       age_from=26
-    ...                                       age_to=27
-    Likes Users Photo Account                 account_id=${ff_account_375447693824}
-    ...                                       users=${users}
-
-375298462344_Minsk_likes
-    BuiltIn.Sleep    6
-    ${users} =       Search Birthday Users    account_id=${account_375298462344}
-    ...                                       timedelta=${timedelta}
-    ...                                       count=1000
-    ...                                       age_from=28
-    ...                                       age_to=29
-    Likes Users Photo Account                 account_id=${account_375298462344}
-    ...                                       users=${users}
-
-375298360265_Minsk_likes
-    BuiltIn.Sleep    8
-    ${users} =       Search Birthday Users    account_id=${account_375298360265}
-    ...                                       timedelta=${timedelta}
-    ...                                       count=1000
-    ...                                       age_from=30
-    ...                                       age_to=31
-    Likes Users Photo Account                 account_id=${account_375298360265}
-    ...                                       users=${users}
-
-375445528788_Minsk_likes
-    BuiltIn.Sleep    10
-    ${users} =       Search Birthday Users    account_id=${ff_account_375445528788}
-    ...                                       timedelta=${timedelta}
-    ...                                       count=1000
-    ...                                       age_from=32
-    ...                                       age_to=33
-    Likes Users Photo Account                 account_id=${ff_account_375445528788}
-    ...                                       users=${users}
-
-375336610743_Minsk_likes
-    BuiltIn.Sleep    12
-    ${users} =       Search Birthday Users    account_id=${ff_account_375336610743}
-    ...                                       timedelta=${timedelta}
-    ...                                       count=1000
-    ...                                       age_from=34
-    ...                                       age_to=35
-    Likes Users Photo Account                 account_id=${ff_account_375336610743}
-    ...                                       users=${users}
-
-375292025693_Minsk_likes
-    BuiltIn.Sleep    14
-    ${users} =       Search Birthday Users    account_id=${ff_account_375292025693}
-    ...                                       timedelta=${timedelta}
-    ...                                       count=1000
-    ...                                       age_from=36
-    ...                                       age_to=37
-    Likes Users Photo Account                 account_id=${ff_account_375292025693}
-    ...                                       users=${users}
-
-Bone_Minsk_likes_engaged
-    BuiltIn.Sleep    16
-    ${users} =       Search Birthday Users    account_id=${account_bone}
-    ...                                       count=1000
-    ...                                       timedelta=${timedelta}
-    ...                                       age_from=${age_from}
-    ...                                       age_to=${age_to}
-    ...                                       status=${status_engaged}
-    Likes Users Photo Account                 account_id=${account_bone}
-    ...                                       users=${users}
-
-Prichello_Minsk_likes_engaged
-    BuiltIn.Sleep    18
-    ${users} =       Search Birthday Users    account_id=${account_prichello}
-    ...                                       count=1000
-    ...                                       timedelta=${timedelta}
-    ...                                       age_from=${age_from}
-    ...                                       age_to=${age_to}
-    ...                                       status=${status_engaged}
-    Likes Users Photo Account                 account_id=${account_prichello}
-    ...                                       users=${users}
+#375447693824_Minsk_likes
+#    # BuiltIn.Sleep    4
+#    ${users} =       Search Birthday Users    account_id=${ff_account_375447693824}
+#    ...                                       timedelta=${timedelta}
+#    ...                                       count=1000
+#    ...                                       age_from=26
+#    ...                                       age_to=27
+#    Likes Users Photo Account                 account_id=${ff_account_375447693824}
+#    ...                                       users=${users}
+#
+#375298462344_Minsk_likes
+#    # BuiltIn.Sleep    6
+#    ${users} =       Search Birthday Users    account_id=${account_375298462344}
+#    ...                                       timedelta=${timedelta}
+#    ...                                       count=1000
+#    ...                                       age_from=28
+#    ...                                       age_to=29
+#    Likes Users Photo Account                 account_id=${account_375298462344}
+#    ...                                       users=${users}
+#
+#375298360265_Minsk_likes
+#    # BuiltIn.Sleep    8
+#    ${users} =       Search Birthday Users    account_id=${account_375298360265}
+#    ...                                       timedelta=${timedelta}
+#    ...                                       count=1000
+#    ...                                       age_from=30
+#    ...                                       age_to=31
+#    Likes Users Photo Account                 account_id=${account_375298360265}
+#    ...                                       users=${users}
+#
+#375445528788_Minsk_likes
+#    # BuiltIn.Sleep    10
+#    ${users} =       Search Birthday Users    account_id=${ff_account_375445528788}
+#    ...                                       timedelta=${timedelta}
+#    ...                                       count=1000
+#    ...                                       age_from=32
+#    ...                                       age_to=33
+#    Likes Users Photo Account                 account_id=${ff_account_375445528788}
+#    ...                                       users=${users}
+#
+#375336610743_Minsk_likes
+#    # BuiltIn.Sleep    12
+#    ${users} =       Search Birthday Users    account_id=${ff_account_375336610743}
+#    ...                                       timedelta=${timedelta}
+#    ...                                       count=1000
+#    ...                                       age_from=34
+#    ...                                       age_to=35
+#    Likes Users Photo Account                 account_id=${ff_account_375336610743}
+#    ...                                       users=${users}
+#
+#375292025693_Minsk_likes
+#    # BuiltIn.Sleep    14
+#    ${users} =       Search Birthday Users    account_id=${ff_account_375292025693}
+#    ...                                       timedelta=${timedelta}
+#    ...                                       count=1000
+#    ...                                       age_from=36
+#    ...                                       age_to=37
+#    Likes Users Photo Account                 account_id=${ff_account_375292025693}
+#    ...                                       users=${users}
+#
+#Bone_Minsk_likes_engaged
+#    # BuiltIn.Sleep    16
+#    ${users} =       Search Birthday Users    account_id=${account_bone}
+#    ...                                       count=1000
+#    ...                                       timedelta=${timedelta}
+#    ...                                       age_from=${age_from}
+#    ...                                       age_to=${age_to}
+#    ...                                       status=${status_engaged}
+#    Likes Users Photo Account                 account_id=${account_bone}
+#    ...                                       users=${users}
+#
+#Prichello_Minsk_likes_engaged
+#    # BuiltIn.Sleep    18
+#    ${users} =       Search Birthday Users    account_id=${account_prichello}
+#    ...                                       count=1000
+#    ...                                       timedelta=${timedelta}
+#    ...                                       age_from=${age_from}
+#    ...                                       age_to=${age_to}
+#    ...                                       status=${status_engaged}
+#    Likes Users Photo Account                 account_id=${account_prichello}
+#    ...                                       users=${users}
