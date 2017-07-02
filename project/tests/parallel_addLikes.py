@@ -48,7 +48,7 @@ path_to_test1 = os.path.join(path_to_tests, 'add_likes.robot')
 commands = [
     [path_to_pybot,
      '--test', '375298681142_Minsk_likes',
-     '--output', 'reports/likes/tmp/output_375298681142_Minsk_likes.xml',
+     '--output', os.path.join(path_to_tests, 'reports/likes/tmp/output_375298681142_Minsk_likes.xml'),
      '--report', 'reports/likes/tmp/report_375298681142_Minsk_likes.html',
      '--log', 'reports/likes/tmp/log_375298681142_Minsk_likes.html', path_to_test1],
     # [path_to_pybot,
