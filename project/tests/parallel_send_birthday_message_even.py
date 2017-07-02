@@ -56,6 +56,7 @@ rebot(os.path.join(path_to_output, 'output_375298462344_Minsk_offset_210.xml'),
       log=os.path.join(path_to_output, '..{sep}log_{pref_data}_send_birthday_even.html'.format(
           sep=os.sep,
           pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
+
 send_email_with_attach("send_birthday_message_even",
                        os.path.join(path_to_output, '..{sep}log_{pref_data}_send_birthday_even.html'.format(
                            sep=os.sep,

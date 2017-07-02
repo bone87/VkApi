@@ -1,100 +1,63 @@
 # -*- coding: utf-8 -*-
 import os
-import time
-from subprocess import Popen, list2cmdline
-
-import sys
-
+from framework.utils.parallel_run import *
 import datetime
 from robot import rebot
-
 from framework.utils.email_sender import send_email_with_attach
 
-
-def exec_commands(cmds):
-    """ Exec commands in parallel
-    """
-    if not cmds:
-        return
-
-    def done(p):
-        return p.poll() is not None
-
-    processes = []
-    while True:
-        while cmds:
-            task = cmds.pop()
-            print list2cmdline(task)
-            processes.append(Popen(task))
-        for p in processes:
-            if done(p):
-                processes.remove(p)
-        if not processes and not cmds:
-            break
-        else:
-            time.sleep(0.05)
-
-
-path_to_pybot_unix = '/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot'
-path_to_pybot_win = 'c:/Python27/Scripts/pybot.bat'
-if sys.platform == 'win32':
-    path_to_pybot = path_to_pybot_win
-else:
-    path_to_pybot = path_to_pybot_unix
 path_to_tests = os.path.abspath(os.path.dirname(__file__))
 path_to_test1 = os.path.join(path_to_tests, 'send_birthday_message.robot')
+path_to_output = os.path.join(path_to_tests, 'reports{sep}message{sep}tmp{sep}'.format(sep=os.sep))
 
 commands = [
     [path_to_pybot,
      '--test', '375298462344_Minsk_offset_0',
-     '--output', 'reports/message/tmp/output_375298462344_Minsk_offset_0.xml',
-     '--report', 'reports/message/tmp/report_375298462344_Minsk_offset_0.html',
-     '--log', 'reports/message/tmp/log_375298462344_Minsk_offset_0.html', path_to_test1],
+     '--output', os.path.join(path_to_output, 'output_375298462344_Minsk_offset_0.xml'),
+     path_to_test1],
+
     [path_to_pybot,
      '--test', '375298360265_Minsk_offset_30',
-     '--output', 'reports/message/tmp/output_375298360265_Minsk_offset_30.xml',
-     '--report', 'reports/message/tmp/report_375298360265_Minsk_offset_30.html',
-     '--log', 'reports/message/tmp/log_375298360265_Minsk_offset_30.html', path_to_test1],
+     '--output', os.path.join(path_to_output, 'output_375298360265_Minsk_offset_30.xml'),
+     path_to_test1],
+
     [path_to_pybot,
      '--test', '375298681142_Minsk_offset_60',
-     '--output', 'reports/message/tmp/output_375298681142_Minsk_offset_60.xml',
-     '--report', 'reports/message/tmp/report_375298681142_Minsk_offset_60.html',
-     '--log', 'reports/message/tmp/log_375298681142_Minsk_offset_60.html', path_to_test1],
+     '--output', os.path.join(path_to_output, 'output_375298681142_Minsk_offset_60.xml'),
+     path_to_test1],
+
     [path_to_pybot,
      '--test', '375447693824_Minsk_offset_90',
-     '--output', 'reports/message/tmp/output_375447693824_Minsk_offset_90.xml',
-     '--report', 'reports/message/tmp/report_375447693824_Minsk_offset_90.html',
-     '--log', 'reports/message/tmp/log_375447693824_Minsk_offset_90.html', path_to_test1],
+     '--output', os.path.join(path_to_output, 'output_375447693824_Minsk_offset_90.xml'),
+     path_to_test1],
+
     [path_to_pybot,
      '--test', '375445528788_Minsk_offset_120',
-     '--output', 'reports/message/tmp/output_375445528788_Minsk_offset_120.xml',
-     '--report', 'reports/message/tmp/report_375445528788_Minsk_offset_120.html',
-     '--log', 'reports/message/tmp/log_375445528788_Minsk_offset_120.html', path_to_test1],
+     '--output', os.path.join(path_to_output, 'output_375445528788_Minsk_offset_120.xml'),
+     path_to_test1],
+
     [path_to_pybot,
      '--test', '375336610743_Minsk_offset_150',
-     '--output', 'reports/message/tmp/output_375336610743_Minsk_offset_150.xml',
-     '--report', 'reports/message/tmp/report_375336610743_Minsk_offset_150.html',
-     '--log', 'reports/message/tmp/log_375336610743_Minsk_offset_150.html', path_to_test1],
+     '--output', os.path.join(path_to_output, 'output_375336610743_Minsk_offset_150.xml'),
+     path_to_test1],
+
     [path_to_pybot,
      '--test', '375292025693_Minsk_offset_180',
-     '--output', 'reports/message/tmp/output_375292025693_Minsk_offset_180.xml',
-     '--report', 'reports/message/tmp/report_375292025693_Minsk_offset_180.html',
-     '--log', 'reports/message/tmp/log_375292025693_Minsk_offset_180.html', path_to_test1],
+     '--output', os.path.join(path_to_output, 'output_375292025693_Minsk_offset_180.xml'),
+     path_to_test1],
 ]
 exec_commands(commands)
-rebot('c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375298462344_Minsk_offset_0.xml',
-      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375298360265_Minsk_offset_30.xml',
-      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375298681142_Minsk_offset_60.xml',
-      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375447693824_Minsk_offset_90.xml',
-      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375445528788_Minsk_offset_120.xml',
-      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375336610743_Minsk_offset_150.xml',
-      'c:/TeamCity/buildAgent/work/9638d64bbda4a9b0/reports/message/tmp/output_375292025693_Minsk_offset_180.xml',
-      report=os.path.join(path_to_tests, 'reports/message/report_{pref_data}_send_birthday.html'.format(
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
-      log=os.path.join(path_to_tests, 'reports/message/log_{pref_data}_send_birthday.html'.format(
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
-      xunit=os.path.join(path_to_tests, 'reports/message/robotxunit_{pref_data}_birthday_message.xml'.format(
+rebot(os.path.join(path_to_output, 'output_375298462344_Minsk_offset_0.xml'),
+      os.path.join(path_to_output, 'output_375298360265_Minsk_offset_30.xml'),
+      os.path.join(path_to_output, 'output_375298681142_Minsk_offset_60.xml'),
+      os.path.join(path_to_output, 'output_375447693824_Minsk_offset_90.xml'),
+      os.path.join(path_to_output, 'output_375445528788_Minsk_offset_120.xml'),
+      os.path.join(path_to_output, 'output_375336610743_Minsk_offset_150.xml'),
+      os.path.join(path_to_output, 'output_375292025693_Minsk_offset_180.xml'),
+      log=os.path.join(path_to_output, '..{sep}log_{pref_data}_send_birthday.html'.format(
+          sep=os.sep,
           pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
+
 send_email_with_attach("send_birthday_message",
-                       os.path.join(path_to_tests, 'reports/message/log_{pref_data}_send_birthday.html'.format(
+                       os.path.join(path_to_output, '..{sep}log_{pref_data}_send_birthday.html'.format(
+                           sep=os.sep,
                            pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
