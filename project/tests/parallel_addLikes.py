@@ -5,7 +5,7 @@ from subprocess import Popen, list2cmdline
 import sys
 import datetime
 from robot import rebot
-# from framework.utils.email_sender import send_email_with_attach
+from framework.utils.email_sender import send_email_with_attach
 
 
 def exec_commands(cmds):
@@ -99,6 +99,7 @@ rebot(os.path.join(path_to_output, 'output_375298681142_Minsk_likes.xml'),
       log=os.path.join(path_to_output, '..{sep}log_{pref_data}_add_likes.html'.format(
           sep=os.sep,
           pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
-# send_email_with_attach("add_likes",
-#                        os.path.join(path_to_tests, 'reports/likes/log_{pref_data}_add_likes.html'.format(
-#                            pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
+send_email_with_attach("add_likes",
+                       os.path.join(path_to_output, '..{sep}log_{pref_data}_add_likes.html'.format(
+                           sep=os.sep,
+                           pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
