@@ -96,15 +96,9 @@ rebot(os.path.join(path_to_output, 'output_375298681142_Minsk_likes.xml'),
       os.path.join(path_to_output, 'output_375292025693_Minsk_likes.xml'),
       os.path.join(path_to_output, 'output_Bone_Minsk_likes_engaged.xml'),
       os.path.join(path_to_output, 'output_Prichello_Minsk_likes_engaged.xml'),
-      report=os.path.join(path_to_output, '..{sep}report_{pref_data}_add_likes.html'.format(
+      log=os.path.join(path_to_output, '..{sep}log_{pref_data}_add_likes.html'.format(
           sep=os.sep,
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
-      log=os.path.join(path_to_tests, '..{sep}log_{pref_data}_add_likes.html'.format(
-          sep=os.sep,
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))),
-      xunit=os.path.join(path_to_tests, '..{sep}robotxunit_{pref_data}_add_likes.xml').format(
-          sep=os.sep,
-          pref_data=datetime.datetime.now().strftime("%Y-%m-%d")))
+          pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
 # send_email_with_attach("add_likes",
 #                        os.path.join(path_to_tests, 'reports/likes/log_{pref_data}_add_likes.html'.format(
 #                            pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
