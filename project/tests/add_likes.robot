@@ -3,7 +3,7 @@ Documentation    Suite description
 Library  ../steps/usersSteps.py
 Library  ../steps/likesSteps.py
 Library  ../../framework/utils/email_sender.py
-Suite Teardown
+Suite Teardown  Teardown Suite
 
 *** Variables ***
 ${account_375298462344} =  310582170
