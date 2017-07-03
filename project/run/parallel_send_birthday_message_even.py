@@ -3,7 +3,7 @@ from framework.utils.parallel_run import *
 
 path_to_here = os.path.abspath(os.path.dirname(__file__))
 path_to_test = os.path.abspath(os.path.join(path_to_here,
-                                            '..{sep}tests{sep}send_birthday_message_even.robot'))
+                                            '..{sep}tests{sep}send_birthday_message_even.robot'.format(sep=os.sep)))
 path_to_output = os.path.abspath(os.path.join(path_to_here,
                                               '..{sep}..{sep}reports{sep}message{sep}tmp{sep}'.format(sep=os.sep)))
 
