@@ -3,7 +3,6 @@ import sys
 
 reload(sys)
 sys.setdefaultencoding('utf8')
-import json
 from framework.data_proc.jsonLib import get_pretty, get_value_from_json
 
 
