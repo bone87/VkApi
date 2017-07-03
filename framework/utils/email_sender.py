@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 import smtplib

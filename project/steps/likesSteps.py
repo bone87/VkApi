@@ -1,13 +1,9 @@
 # coding=utf-8
 import random
-
-import time
-
 from framework.support.commonFunctions import get_random_int, sleep
 from framework.support.log import log_info
 from project.api_call.friendsApi import FriendsApi
 from project.api_call.likesApi import LikesApi
-
 
 def is_profile_photo_liked(account_id, user):
     photo_id = user.photo_id.split('_')[1]
@@ -37,7 +33,7 @@ def likes_users_photo_account(account_id, users):
     log_info('Найдено {len} чел.'.format(len=len(users)))
     count = 1
     limit = get_random_int(70, 90)
-    limit = 0
+    # limit = 0
     while count < limit and len(users) >= 1:
         random_index = random.randint(0, len(users) - 1)
         user = users.pop(random_index)
@@ -59,3 +55,16 @@ def likes_users_photo_account(account_id, users):
             sleep(random_seconds)
     log_info('::: [END] Лайкнуто: {count}/{len} :::'.format(count=count - 1,
                                                             len=count_all_users_with_photo))
+
+#
+# def like_users_photo(account_id, count, offset, age_from, age_to, sleep_time, timedelta=2, status=None):
+#     sleep(float(sleep_time))
+#     users = search_birthday_users(account_id=account_id,
+#                                   count=count,
+#                                   offset=offset,
+#                                   status=status,
+#                                   age_from=age_from,
+#                                   age_to=age_to,
+#                                   timedelta=timedelta)
+#     likes_users_photo_account(account_id=account_id,
+#                               users=users)
