@@ -83,7 +83,3 @@ def search_users_lesnoi(account_id):
 
 def get_user_by_id(account_id, user_id):
     return UsersApi(account_id).get(user_id)
-
-
-    # users = search_users_minsk(account_id='310582170')
-    # print len(users)

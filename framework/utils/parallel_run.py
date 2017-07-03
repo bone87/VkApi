@@ -75,6 +75,7 @@ def run_and_mail(tests, path_to_test, path_to_output, action):
               action,
               *tests)
     send_email_with_attach(action,
-                           os.path.join(path_to_output, '..{sep}log_{pref_data}_add_likes.html'.format(
+                           os.path.abspath(os.path.join(path_to_output, '..{sep}log_{pref_data}_{action}.html'.format(
                                sep=os.sep,
-                               pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
+                               action=action,
+                               pref_data=datetime.datetime.now().strftime("%Y-%m-%d")))))

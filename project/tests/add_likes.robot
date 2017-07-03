@@ -6,7 +6,6 @@ Resource  common.robot
 
 *** Variables ***
 ${count}=  1000
-${offset} =  100
 ${timedelta} =  2
 ${age_from} =  25
 ${age_to} =  35
