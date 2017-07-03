@@ -1,8 +1,5 @@
 # coding=utf-8
 import random
-
-import time
-
 from framework.support.commonFunctions import get_random_int, sleep
 from framework.support.log import log_info
 from project.api_call.friendsApi import FriendsApi

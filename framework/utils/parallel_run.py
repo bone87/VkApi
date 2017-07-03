@@ -4,6 +4,20 @@ import time
 from subprocess import Popen, list2cmdline
 import sys
 
+import datetime
+from robot import rebot
+
+from framework.utils.email_sender import send_email_with_attach
+
+
+def get_path_to_pybot():
+    path_to_pybot_unix = '/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot'
+    path_to_pybot_win = 'c:/Python27/Scripts/pybot.bat'
+    if sys.platform == 'win32':
+        return path_to_pybot_win
+    else:
+        return path_to_pybot_unix
+
 
 def exec_commands(cmds):
     """ Exec commands in parallel
@@ -29,20 +43,35 @@ def exec_commands(cmds):
             time.sleep(0.05)
 
 
-def generate_commands(tests, path_to_pybot, path_to_output, path_to_tests):
-    commands = []
-    for test in tests:
-        commands.append([path_to_pybot,
-                         '--test',
-                         str(test),
-                         '--output',
-                         os.path.join(path_to_output, 'output_{test_name}.xml'.format(test_name=test)),
-                         path_to_tests])
-    return commands
+def generate_commands(tests, path_to_test, path_to_output, path_to_pybot=get_path_to_pybot()):
+    return [[path_to_pybot,
+             '--test',
+             str(test),
+             '--output',
+             os.path.join(path_to_output, 'output_{test_name}.xml'.format(test_name=test)),
+             path_to_test]
+            for test in tests]
 
-path_to_pybot_unix = '/home/ITRANSITION.CORP/e.bondarenko/.local/bin/pybot'
-path_to_pybot_win = 'c:/Python27/Scripts/pybot.bat'
-if sys.platform == 'win32':
-    path_to_pybot = path_to_pybot_win
-else:
-    path_to_pybot = path_to_pybot_unix
+
+def run_rebot(path_to_output, action_name, *tests):
+    list = [os.path.join(path_to_output, 'output_{test_name}.xml'.format(test_name=test_name)) for test_name in tests]
+    log = os.path.abspath(os.path.join(path_to_output, '..{sep}log_{pref_data}_{action}.html'.format(
+        sep=os.sep,
+        action=action_name,
+        pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
+    rebot(*list,
+          log=log)
+
+
+def run_and_mail(tests, path_to_test, path_to_output, action):
+    commands = generate_commands(tests=tests,
+                                 path_to_test=path_to_test,
+                                 path_to_output=path_to_output)
+    exec_commands(commands)
+    run_rebot(path_to_output,
+              action,
+              *tests)
+    send_email_with_attach(action,
+                           os.path.join(path_to_output, '..{sep}log_{pref_data}_add_likes.html'.format(
+                               sep=os.sep,
+                               pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
