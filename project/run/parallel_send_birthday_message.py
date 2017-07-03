@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from framework.utils.parallel_run import *
 
-path_to_tests = os.path.abspath(os.path.dirname(__file__))
-path_to_test = os.path.join(path_to_tests, 'send_birthday_message.robot')
-path_to_output = os.path.join(path_to_tests, 'reports{sep}message{sep}tmp{sep}'.format(sep=os.sep))
+path_to_here = os.path.abspath(os.path.dirname(__file__))
+path_to_test = os.path.abspath(os.path.join(path_to_here,
+                                            '..{sep}tests{sep}send_birthday_message.robot'))
+path_to_output = os.path.abspath(os.path.join(path_to_here,
+                                              '..{sep}..{sep}reports{sep}message{sep}tmp{sep}'.format(sep=os.sep)))
 
 tests_list = ['375298462344_Minsk_offset_0',
               '375298360265_Minsk_offset_30',

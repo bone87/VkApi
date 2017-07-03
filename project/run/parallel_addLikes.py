@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from framework.utils.parallel_run import *
 
-path_to_tests = os.path.abspath(os.path.dirname(__file__))
-path_to_test = os.path.join(path_to_tests, 'add_likes.robot')
-path_to_output = os.path.join(path_to_tests, 'reports{sep}likes{sep}tmp{sep}'.format(sep=os.sep))
+path_to_here = os.path.abspath(os.path.dirname(__file__))
+path_to_test = os.path.abspath(os.path.join(path_to_here,
+                                            '..{sep}tests{sep}add_likes.robot'.format(sep=os.sep)))
+path_to_output = os.path.abspath(os.path.join(path_to_here,
+                                              '..{sep}..{sep}reports{sep}likes{sep}tmp{sep}'.format(sep=os.sep)))
 
 tests_list = ['375298681142_Minsk_likes',
               '375447693824_Minsk_likes',

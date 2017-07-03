@@ -1,19 +1,10 @@
 *** Settings ***
-Documentation    Suite description
+Documentation  Likes Users Photo Account
 Library  ../steps/usersSteps.py
 Library  ../steps/likesSteps.py
-Suite Teardown
+Resource  common.robot
 
 *** Variables ***
-${account_375298462344} =  310582170
-${account_375298360265} =  291495044
-${account_bone} =  62641084
-${account_prichello} =  8649106
-${ff_account_375298681142} =  286454976
-${ff_account_375447693824} =  286454510
-${ff_account_375445528788} =  280826200
-${ff_account_375336610743} =  291476922
-${ff_account_375292025693} =  435797587
 ${offset} =  100
 ${timedelta} =  2
 ${age_from} =  25
@@ -22,7 +13,7 @@ ${status_engaged} =  3
 
 *** Test Cases ***
 375298681142_Minsk_likes
-    # BuiltIn.Sleep    2
+    BuiltIn.Sleep    2
     ${users} =       Search Birthday Users    account_id=${ff_account_375298681142}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -33,7 +24,7 @@ ${status_engaged} =  3
 
 
 375447693824_Minsk_likes
-    # BuiltIn.Sleep    4
+    BuiltIn.Sleep    4
     ${users} =       Search Birthday Users    account_id=${ff_account_375447693824}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -43,7 +34,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 375298462344_Minsk_likes
-    # BuiltIn.Sleep    6
+    BuiltIn.Sleep    6
     ${users} =       Search Birthday Users    account_id=${account_375298462344}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -53,7 +44,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 375298360265_Minsk_likes
-    # BuiltIn.Sleep    8
+    BuiltIn.Sleep    8
     ${users} =       Search Birthday Users    account_id=${account_375298360265}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -63,7 +54,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 375445528788_Minsk_likes
-    # BuiltIn.Sleep    10
+    BuiltIn.Sleep    10
     ${users} =       Search Birthday Users    account_id=${ff_account_375445528788}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -73,7 +64,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 375336610743_Minsk_likes
-    # BuiltIn.Sleep    12
+    BuiltIn.Sleep    12
     ${users} =       Search Birthday Users    account_id=${ff_account_375336610743}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -83,7 +74,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 375292025693_Minsk_likes
-    # BuiltIn.Sleep    14
+    BuiltIn.Sleep    14
     ${users} =       Search Birthday Users    account_id=${ff_account_375292025693}
     ...                                       timedelta=${timedelta}
     ...                                       count=1000
@@ -93,7 +84,7 @@ ${status_engaged} =  3
     ...                                       users=${users}
 
 Bone_Minsk_likes_engaged
-    # BuiltIn.Sleep    16
+    BuiltIn.Sleep    16
     ${users} =       Search Birthday Users    account_id=${account_bone}
     ...                                       count=1000
     ...                                       timedelta=${timedelta}
@@ -104,7 +95,7 @@ Bone_Minsk_likes_engaged
     ...                                       users=${users}
 
 Prichello_Minsk_likes_engaged
-    # BuiltIn.Sleep    18
+    BuiltIn.Sleep    18
     ${users} =       Search Birthday Users    account_id=${account_prichello}
     ...                                       count=1000
     ...                                       timedelta=${timedelta}

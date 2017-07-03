@@ -1,36 +1,31 @@
 *** Settings ***
-Documentation    Suite description
+Documentation    Send Birthday Messages Evening
 Library  ../steps/usersSteps.py
 Library  ../steps/messagesSteps.py
+Resource  common.robot
 
 *** Variables ***
-${opera_account} =  310582170
-${ff_account} =  291495044
-${ff_account_375298681142} =  286454976
-${ff_account_375447693824} =  286454510
-${ff_account_375445528788} =  280826200
-${ff_account_375336610743} =  291476922
-${ff_account_375292025693} =  435797587
+
 ${age_from} =  29
 ${age_to} =  34
 
 *** Test Cases ***
 375298462344_Minsk_offset_210
     BuiltIn.Sleep                         2
-    ${users}=    Search Birthday Users    account_id=${opera_account}
+    ${users}=    Search Birthday Users    account_id=${account_375298462344}
     ...                                   offset=210
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
-    Send Birthday Messages                account_id=${opera_account}
+    Send Birthday Messages                account_id=${account_375298462344}
     ...                                   users=${users}
 
 375298360265_Minsk_offset_240
     BuiltIn.Sleep                         4
-    ${users}=    Search Birthday Users    account_id=${ff_account}
+    ${users}=    Search Birthday Users    account_id=${account_375298360265}
     ...                                   offset=240
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
-    Send Birthday Messages                account_id=${ff_account}
+    Send Birthday Messages                account_id=${account_375298360265}
     ...                                   users=${users}
 
 375298681142_Minsk_offset_270

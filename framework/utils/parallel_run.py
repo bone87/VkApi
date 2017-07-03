@@ -45,10 +45,10 @@ def exec_commands(cmds):
 
 def generate_commands(tests, path_to_test, path_to_output, path_to_pybot=get_path_to_pybot()):
     return [[path_to_pybot,
-             '--test',
-             str(test),
-             '--output',
-             os.path.join(path_to_output, 'output_{test_name}.xml'.format(test_name=test)),
+             '--test', str(test),
+             '--output', os.path.join(path_to_output, 'output_{test_name}.xml'.format(test_name=test)),
+             '--report', os.path.join(path_to_output, 'report_{test_name}.html'.format(test_name=test)),
+             '--log', os.path.join(path_to_output, 'log_{test_name}.html'.format(test_name=test)),
              path_to_test]
             for test in tests]
 
@@ -59,8 +59,11 @@ def run_rebot(path_to_output, action_name, *tests):
         sep=os.sep,
         action=action_name,
         pref_data=datetime.datetime.now().strftime("%Y-%m-%d"))))
+
+    report = os.path.abspath(os.path.join(path_to_output, '..{sep}report.html'.format(sep=os.sep)))
     rebot(*list,
-          log=log)
+          log=log,
+          report=report)
 
 
 def run_and_mail(tests, path_to_test, path_to_output, action):
