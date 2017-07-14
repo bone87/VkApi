@@ -5,8 +5,8 @@ Library  ../steps/messagesSteps.py
 Resource  common.robot
 
 *** Variables ***
-${age_from} =  29
-${age_to} =  34
+${age_from} =  28
+${age_to} =  35
 
 *** Keywords ***
 Send Messages
