@@ -47,7 +47,7 @@ class UsersApi(BaseApi):
             if not UsersApi.is_blacklisted(user):
                 user_model = User(user)
                 user_model_list.append(user_model)
-        log_info('Найдено пользователей: {count}.'.format(count=len(user_model_list)))
+        log_info('Всего найдено пользователей: {count}.'.format(count=len(user_model_list)))
         return user_model_list
 
     @staticmethod

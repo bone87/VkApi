@@ -50,8 +50,6 @@ def search_birthday_users(account_id,
                                         age_to=age_to,
                                         birth_day=day_now,
                                         birth_month=month_now)
-    # for user in users:
-    #     print user
     return users
 
 

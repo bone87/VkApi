@@ -39,4 +39,9 @@ Resource  resource.robot
     ...              offset=180
     ...              sleep=14
 
+DRON_Mama_Minsk_offset_210
+    Send Messages    account_id=${ff_account_DRON_Mama}
+    ...              offset=210
+    ...              sleep=16
+
 

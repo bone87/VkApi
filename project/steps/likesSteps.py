@@ -33,7 +33,7 @@ def likes_users_photo_account(account_id, users):
     log_info('Найдено {len} чел.'.format(len=len(users)))
     count = 1
     limit = get_random_int(70, 90)
-    limit = 0
+    # limit = 0
     while count < limit and len(users) >= 1:
         random_index = random.randint(0, len(users) - 1)
         user = users.pop(random_index)
@@ -44,7 +44,7 @@ def likes_users_photo_account(account_id, users):
             first_name=user.first_name,
             last_name=user.last_name))
         if add_like_to_profile_photo(account_id=account_id, user=user):
-            random_seconds = get_random_int(200, 300)
+            random_seconds = get_random_int(30, 50)
             log_info('   {message}: {count}.'.format(message='Лайк',
                                                      count=count))
             sleep(random_seconds)

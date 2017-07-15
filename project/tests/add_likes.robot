@@ -39,21 +39,28 @@ ${status_engaged} =  3
 
 375445528788_Minsk_likes
     Like Users Photo    account_id=${ff_account_375445528788}
-    ...                 age_from=30
-    ...                 age_to=31
+    ...                 age_from=32
+    ...                 age_to=33
     ...                 sleep=10
 
 375336610743_Minsk_likes
     Like Users Photo    account_id=${ff_account_375336610743}
-    ...                 age_from=30
-    ...                 age_to=31
+    ...                 age_from=34
+    ...                 age_to=35
     ...                 sleep=12
 
 375292025693_Minsk_likes
     Like Users Photo    account_id=${ff_account_375292025693}
-    ...                 age_from=30
-    ...                 age_to=31
+    ...                 age_from=36
+    ...                 age_to=37
     ...                 sleep=14
+
+
+DRON_Mama_Minsk_likes
+    Like Users Photo    account_id=${ff_account_DRON_Mama}
+    ...                 age_from=38
+    ...                 age_to=39
+    ...                 sleep=16
 
 Bone_Minsk_likes_engaged
     BuiltIn.Sleep    16
