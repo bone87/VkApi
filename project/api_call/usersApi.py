@@ -1,6 +1,7 @@
 # coding=utf-8
 from framework.data_proc.jsonLib import get_value_from_json
 from framework.http.httpLib import HttpLib
+from framework.support.log import log_info
 from project.api_call.baseApi import BaseApi
 from project.configuration.statusCode import status_code_200
 from project.model.user import User
@@ -46,6 +47,7 @@ class UsersApi(BaseApi):
             if not UsersApi.is_blacklisted(user):
                 user_model = User(user)
                 user_model_list.append(user_model)
+        log_info('Найдено пользователей: {count}.'.format(count=len(user_model_list)))
         return user_model_list
 
     @staticmethod
