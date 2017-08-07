@@ -1,9 +1,7 @@
 # coding=utf-8
-import time
 
-import datetime
-
-from framework.support.commonFunctions import convert_date_to_unix_time_stamp, get_random_int, sleep
+from robot.libraries.BuiltIn import BuiltIn
+from framework.support.commonFunctions import get_random_int, sleep
 from framework.support.log import log_info
 from project.api_call.messagesApi import MessagesApi
 from project.steps.usersSteps import detete_more_10_weeks_last_seen_users
@@ -50,3 +48,5 @@ def send_birthday_messages(account_id,
                 break
     log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count - 1,
                                                                          len=count_users))
+    if (count-1) < 5:
+        BuiltIn().fail(msg='Count < {}'.format(count-1))
