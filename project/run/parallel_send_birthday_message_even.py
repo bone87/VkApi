@@ -13,7 +13,7 @@ tests_list = ['375298462344_Minsk_offset_240',
               '375447693824_Minsk_offset_330',
               '375445528788_Minsk_offset_360',
               '375336610743_Minsk_offset_390',
-              '375292025693_Minsk_offset_420]
+              '375292025693_Minsk_offset_420']
 #               ',
 #               'DRON_Mama_Minsk_offset_450']
 
