@@ -10,7 +10,7 @@ path_to_output = os.path.abspath(os.path.join(path_to_here,
 tests_list = [
     '375298462344_Minsk_offset_240',
     '375298360265_Minsk_offset_270',
-    '375298681142_Minsk_offset_300',
+    # '375298681142_Minsk_offset_300',
     '375447693824_Minsk_offset_330',
     '375445528788_Minsk_offset_360',
     '375336610743_Minsk_offset_390',
