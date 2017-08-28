@@ -14,7 +14,7 @@ tests_list = [
     '375298360265_Minsk_likes',
     '375445528788_Minsk_likes',
     '375292025693_Minsk_likes',
-    # 'DRON_Mama_Minsk_likes',
+    'DRON_Mama_Minsk_likes',
     'Bone_Minsk_likes_engaged',
     'Prichello_Minsk_likes_engaged'
 ]
