@@ -14,6 +14,7 @@ Send Messages
     [Arguments]  ${account_id}
     ...          ${offset}
     ...          ${sleep}
+    ...          ${count}=${None}
     BuiltIn.Sleep    ${sleep}
     ${users}=    Search Birthday Users    account_id=${account_id}
     ...                                   offset=${offset}

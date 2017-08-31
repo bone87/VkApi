@@ -22,6 +22,7 @@ Resource  resource.robot
     Send Messages    account_id=${ff_account_375447693824}
     ...              offset=90
     ...              sleep=8
+    ...              count=10
 
 
 375445528788_Minsk_offset_120
