@@ -45,4 +45,15 @@ DRON_Mama_Minsk_offset_210
     ...              offset=210
     ...              sleep=16
 
+375444106107_Minsk_offset_240
+    Send Messages    account_id=${vlc_375444106107}
+    ...              offset=240
+    ...              sleep=18
+    ...              count=10
+
+375444106104_Minsk_offset_270
+    Send Messages    account_id=${vlc_375444106107}
+    ...              offset=270
+    ...              sleep=20
+    ...              count=10
 

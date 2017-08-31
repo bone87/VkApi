@@ -15,7 +15,9 @@ tests_list = [
               '375445528788_Minsk_offset_120',
               '375336610743_Minsk_offset_150',
               '375292025693_Minsk_offset_180',
-              'DRON_Mama_Minsk_offset_210']
+              'DRON_Mama_Minsk_offset_210',
+              '375444106107_Minsk_offset_240',
+              '375444106104_Minsk_offset_270']
 
 run_and_mail(tests=tests_list,
              path_to_test=path_to_test,
