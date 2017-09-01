@@ -14,7 +14,7 @@ Send Messages
     [Arguments]  ${account_id}
     ...          ${offset}
     ...          ${sleep}
-    ...          ${count}=${None}
+    ...          ${max_count}=${20}
     BuiltIn.Sleep    ${sleep}
     ${users}=    Search Birthday Users    account_id=${account_id}
     ...                                   offset=${offset}
@@ -22,3 +22,4 @@ Send Messages
     ...                                   age_to=${age_to}
     Send Birthday Messages                account_id=${account_id}
     ...                                   users=${users}
+    ...                                   max_count=${max_count}

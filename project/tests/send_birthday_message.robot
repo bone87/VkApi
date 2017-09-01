@@ -22,7 +22,6 @@ Resource  resource.robot
     Send Messages    account_id=${ff_account_375447693824}
     ...              offset=90
     ...              sleep=8
-    ...              count=10
 
 
 375445528788_Minsk_offset_120
@@ -49,11 +48,9 @@ DRON_Mama_Minsk_offset_210
     Send Messages    account_id=${vlc_375444106107}
     ...              offset=240
     ...              sleep=18
-    ...              count=10
 
 375444106104_Minsk_offset_270
-    Send Messages    account_id=${vlc_375444106107}
+    Send Messages    account_id=${vlc_375444106104}
     ...              offset=270
     ...              sleep=20
-    ...              count=10
 
