@@ -1,27 +1,27 @@
-# -*- coding: utf-8 -*-
-from framework.utils.parallel_run import *
+# # -*- coding: utf-8 -*-
+# from framework.utils.parallel_run import *
 
-path_to_here = os.path.abspath(os.path.dirname(__file__))
-path_to_test = os.path.abspath(os.path.join(path_to_here,
-                                            '..{sep}tests{sep}send_birthday_message.robot'.format(sep=os.sep)))
-path_to_output = os.path.abspath(os.path.join(path_to_here,
-                                              '..{sep}..{sep}reports{sep}message{sep}tmp{sep}'.format(sep=os.sep)))
+# path_to_here = os.path.abspath(os.path.dirname(__file__))
+# path_to_test = os.path.abspath(os.path.join(path_to_here,
+#                                             '..{sep}tests{sep}send_birthday_message.robot'.format(sep=os.sep)))
+# path_to_output = os.path.abspath(os.path.join(path_to_here,
+#                                               '..{sep}..{sep}reports{sep}message{sep}tmp{sep}'.format(sep=os.sep)))
 
-tests_list = [
-              '375298462344_Minsk_offset_0',
-              '375298360265_Minsk_offset_30',
-              '375298681142_Minsk_offset_60',
-              '375447693824_Minsk_offset_90',
-              '375445528788_Minsk_offset_120',
-              '375336610743_Minsk_offset_150',
-              '375292025693_Minsk_offset_180',
-              'DRON_Mama_Minsk_offset_210',
-              '375444106107_Minsk_offset_240',
-              '375444106104_Minsk_offset_270',
-              '375299403425_Minsk_offset_300',
-              '375299403419_Minsk_offset_330']
+# tests_list = [
+#               '375298462344_Minsk_offset_0',
+#               '375298360265_Minsk_offset_30',
+#               '375298681142_Minsk_offset_60',
+#               '375447693824_Minsk_offset_90',
+#               '375445528788_Minsk_offset_120',
+#               '375336610743_Minsk_offset_150',
+#               '375292025693_Minsk_offset_180',
+#               'DRON_Mama_Minsk_offset_210',
+#               '375444106107_Minsk_offset_240',
+#               '375444106104_Minsk_offset_270',
+#               '375299403425_Minsk_offset_300',
+#               '375299403419_Minsk_offset_330']
 
-run_and_mail(tests=tests_list,
-             path_to_test=path_to_test,
-             path_to_output=path_to_output,
-             action="send_birthday_message")
+# run_and_mail(tests=tests_list,
+#              path_to_test=path_to_test,
+#              path_to_output=path_to_output,
+#              action="send_birthday_message")
