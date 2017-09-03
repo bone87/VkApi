@@ -8,6 +8,7 @@ from framework.support.log import log_info
 from project.api_call.friendsApi import FriendsApi
 from project.api_call.likesApi import LikesApi
 
+
 def is_profile_photo_liked(account_id, user):
     photo_id = user.photo_id.split('_')[1]
     return True if LikesApi(account_id).is_liked(user_id=user.user_id, item_id_obj=photo_id)[0] == 1 else False
@@ -30,13 +31,13 @@ def delete_users_without_photo(users):
     return [user for user in users if user.has_photo == 1]
 
 
-def likes_users_photo_account(account_id, users):
+def likes_users_photo_account(account_id, users, limit):
     users = delete_users_without_photo(users)
     count_all_users_with_photo = len(users)
     log_info('Найдено {len} чел.'.format(len=len(users)))
     count = 1
-    limit = get_random_int(40, 50)
-    # limit = 0
+    if not limit:
+        limit = get_random_int(40, 50)
     while count < limit and len(users) >= 1:
         random_index = random.randint(0, len(users) - 1)
         user = users.pop(random_index)
