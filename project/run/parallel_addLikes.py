@@ -8,9 +8,9 @@ path_to_output = os.path.abspath(os.path.join(path_to_here,
                                               '..{sep}..{sep}reports{sep}likes{sep}tmp{sep}'.format(sep=os.sep)))
 
 tests_list = [
-    'vlc_375444106107_Minsk_likes',
-    'vlc_375444106104_Minsk_likes',
-    'vlc_375299403425_Minsk_likes',
+    # 'vlc_375444106107_Minsk_likes',
+    # 'vlc_375444106104_Minsk_likes',
+    # 'vlc_375299403425_Minsk_likes',
     'vlc_375299403419_Minsk_likes',
     'vlc_375445528788_Minsk_likes',
     'vlc_375447693824_Minsk_likes',
