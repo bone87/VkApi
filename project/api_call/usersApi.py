@@ -44,7 +44,7 @@ class UsersApi(BaseApi):
         users_list = get_value_from_json(response, 'items')
         user_model_list = []
         for user in users_list:
-            if not UsersApi.is_blacklisted(user):
+            if not(UsersApi.is_blacklisted(user)) and (user['id'] not in [150437158]):
                 user_model = User(user)
                 user_model_list.append(user_model)
         log_info('Всего найдено пользователей: {count}.'.format(count=len(user_model_list)))
@@ -54,6 +54,8 @@ class UsersApi(BaseApi):
     def is_blacklisted(user_json):
         if get_value_from_json(user_json, 'blacklisted') == 1:
             return True
+        else:
+            return False
 
     def get(self, user_id):
         url = '{api}users.get'.format(api=self.api_url)
