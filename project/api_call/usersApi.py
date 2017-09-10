@@ -44,7 +44,8 @@ class UsersApi(BaseApi):
         users_list = get_value_from_json(response, 'items')
         user_model_list = []
         for user in users_list:
-            if not(UsersApi.is_blacklisted(user)) and (user['id'] not in [150437158]):
+            if not(UsersApi.is_blacklisted(user)) and (user['id'] not in [11225104,
+                                                                          150437158]):
                 user_model = User(user)
                 user_model_list.append(user_model)
         log_info('Всего найдено пользователей: {count}.'.format(count=len(user_model_list)))
