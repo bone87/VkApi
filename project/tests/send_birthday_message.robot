@@ -3,24 +3,6 @@ Documentation    Send Birthday Messages Morning.
 Resource  resource.robot
 
 *** Test Cases ***
-vlc_375444106107_Minsk_offset_0
-    Send Messages    account_id=${vlc_375444106107}
-    ...              offset=0
-    ...              sleep=2
-    ...              max_count=${10}
-
-vlc_375444106104_Minsk_offset_30
-    Send Messages    account_id=${vlc_375444106104}
-    ...              offset=30
-    ...              sleep=4
-    ...              max_count=${10}
-
-vlc_375299403425_Minsk_offset_60
-    Send Messages    account_id=${vlc_375299403425}
-    ...              offset=60
-    ...              sleep=6
-    ...              max_count=${10}
-
 vlc_375299403419_Minsk_offset_90
     Send Messages    account_id=${vlc_375299403419}
     ...              offset=90
@@ -64,84 +46,5 @@ mts_375336610743_Minsk_offset_300
 
 mts_375298845346_Minsk_offset_330
     Send Messages    account_id=${mts_375298845346}
-    ...              offset=330
-    ...              sleep=24
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-375298462344_Minsk_offset_0
-    Send Messages    account_id=${mts_375298462344}
-    ...              offset=0
-    ...              sleep=2
-
-375298360265_Minsk_offset_30
-    Send Messages    account_id=${mts_375298360265}
-    ...              offset=30
-    ...              sleep=4
-
-375298681142_Minsk_offset_60
-    Send Messages    account_id=${mts_375298681142}
-    ...              offset=60
-    ...              sleep=6
-
-375447693824_Minsk_offset_90
-    Send Messages    account_id=${vlc_375447693824}
-    ...              offset=90
-    ...              sleep=8
-
-375445528788_Minsk_offset_120
-    Send Messages    account_id=${vlc_375445528788}
-    ...              offset=120
-    ...              sleep=10
-
-375336610743_Minsk_offset_150
-    Send Messages    account_id=${mts_375336610743}
-    ...              offset=150
-    ...              sleep=12
-
-375292025693_Minsk_offset_180
-    Send Messages    account_id=${mts_375292025693}
-    ...              offset=180
-    ...              sleep=14
-
-375298845346_Minsk_offset_210  # DRON mama
-    Send Messages    account_id=${mts_375298845346}
-    ...              offset=210
-    ...              sleep=16
-
-375444106107_Minsk_offset_240
-    Send Messages    account_id=${vlc_375444106107}
-    ...              offset=240
-    ...              sleep=18
-
-375444106104_Minsk_offset_270
-    Send Messages    account_id=${vlc_375444106104}
-    ...              offset=270
-    ...              sleep=20
-
-375299403425_Minsk_offset_300
-    Send Messages    account_id=${vlc_375299403425}
-    ...              offset=300
-    ...              sleep=22
-
-375299403419_Minsk_offset_330
-    Send Messages    account_id=${vlc_375299403419}
     ...              offset=330
     ...              sleep=24
