@@ -7,7 +7,6 @@ vlc_375299403419_Minsk_offset_90
     Send Messages    account_id=${vlc_375299403419}
     ...              offset=90
     ...              sleep=8
-    ...              max_count=${10}
 
 vlc_375445528788_Minsk_offset_120
     Send Messages    account_id=${vlc_375445528788}
