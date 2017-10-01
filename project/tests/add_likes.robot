@@ -84,6 +84,13 @@ mts_375298845346_Minsk_likes
     ...                 age_to=31
     ...                 sleep=24
 
+mts_375292463065_Minsk_likes
+    Like Users Photo    account_id=${mts_375298845346}
+    ...                 age_from=32
+    ...                 age_to=32
+    ...                 sleep=2
+
+
 Bone_Minsk_likes_engaged
     BuiltIn.Sleep    26
     ${users} =       Search Birthday Users    account_id=${account_bone}
