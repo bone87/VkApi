@@ -10,7 +10,7 @@ vlc_375299403419_Minsk_offset_90
 
 vlc_375445528788_Minsk_offset_120
     Send Messages    account_id=${vlc_375445528788}
-    ...              offset=120
+    ...              offset=121
     ...              sleep=10
 
 vlc_375447693824_Minsk_offset_150
@@ -20,7 +20,7 @@ vlc_375447693824_Minsk_offset_150
 
 mts_375298462344_Minsk_offset_180
     Send Messages    account_id=${mts_375298462344}
-    ...              offset=180
+    ...              offset=181
     ...              sleep=14
 
 mts_375298360265_Minsk_offset_210
@@ -40,7 +40,7 @@ mts_375298681142_Minsk_offset_270
 
 mts_375336610743_Minsk_offset_300
     Send Messages    account_id=${mts_375336610743}
-    ...              offset=300
+    ...              offset=301
     ...              sleep=22
 
 mts_375298845346_Minsk_offset_330
