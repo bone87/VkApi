@@ -22,7 +22,10 @@ tests_list = [
     # 'mts_375298845346_Minsk_likes',
     # 'Bone_Minsk_likes_engaged',
     # 'Prichello_Minsk_likes_engaged'
-    'mts_375292463065_Minsk_likes'
+
+    'mts_375292463065_Minsk_likes',
+    'life_375255100893_Minsk_likes'
+
 ]
 
 run_and_mail(tests=tests_list,

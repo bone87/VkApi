@@ -12,6 +12,23 @@ ${age_to} =  35
 ${status_engaged} =  3
 
 *** Test Cases ***
+mts_375292463065_Minsk_likes
+    Like Users Photo    account_id=${mts_375292463065}
+    ...                 age_from=20
+    ...                 age_to=20
+    ...                 sleep=2
+
+life_375255100893_Minsk_likes
+    Like Users Photo    account_id=${life_375255100893}
+    ...                 age_from=21
+    ...                 age_to=21
+    ...                 sleep=4
+
+
+
+
+
+
 vlc_375444106107_Minsk_likes
     Like Users Photo    account_id=${vlc_375444106107}
     ...                 age_from=20
@@ -84,11 +101,6 @@ mts_375298845346_Minsk_likes
     ...                 age_to=31
     ...                 sleep=24
 
-mts_375292463065_Minsk_likes
-    Like Users Photo    account_id=${mts_375298845346}
-    ...                 age_from=32
-    ...                 age_to=32
-    ...                 sleep=2
 
 
 Bone_Minsk_likes_engaged
