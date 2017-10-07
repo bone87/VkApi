@@ -9,8 +9,8 @@ path_to_output = os.path.abspath(os.path.join(path_to_here,
 
 tests_list = [
     # 'vlc_375444106107_Minsk_offset_0',
-    # 'vlc_375444106104_Minsk_offset_30',
 
+    'life_375255100893_Minsk_offset_30',
     'mts_375292463065_Minsk_offset_60',
     'vlc_375299403419_Minsk_offset_90',
     'vlc_375445528788_Minsk_offset_120',

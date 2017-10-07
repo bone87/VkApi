@@ -3,6 +3,12 @@ Documentation    Send Birthday Messages Morning.
 Resource  resource.robot
 
 *** Test Cases ***
+life_375255100893_Minsk_offset_30
+    Send Messages    account_id=${life_375255100893}
+    ...              offset=30
+    ...              sleep=4
+    ...              max_count=${10}
+
 mts_375292463065_Minsk_offset_60
     Send Messages    account_id=${mts_375292463065}
     ...              offset=60
