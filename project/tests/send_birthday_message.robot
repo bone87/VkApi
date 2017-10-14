@@ -49,6 +49,7 @@ mts_375298681142_Minsk_offset_270
     Send Messages    account_id=${mts_375298681142}
     ...              offset=270
     ...              sleep=20
+    ...              max_count=${10}
 
 mts_375336610743_Minsk_offset_300
     Send Messages    account_id=${mts_375336610743}
