@@ -24,11 +24,6 @@ life_375255100893_Minsk_likes
     ...                 age_to=21
     ...                 sleep=4
 
-
-
-
-
-
 vlc_375444106107_Minsk_likes
     Like Users Photo    account_id=${vlc_375444106107}
     ...                 age_from=20
