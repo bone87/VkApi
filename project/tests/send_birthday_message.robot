@@ -67,3 +67,9 @@ mts_375298845346_Minsk_offset_330
     Send Messages    account_id=${mts_375298845346}
     ...              offset=330
     ...              sleep=24
+
+life_375255095305_Minsk_offset_360
+    Send Messages    account_id=${life_375255095305}
+    ...              offset=360
+    ...              sleep=26
+    ...              max_count=${10}
