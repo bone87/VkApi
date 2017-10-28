@@ -73,3 +73,15 @@ life_375255095305_Minsk_offset_360
     ...              offset=360
     ...              sleep=26
     ...              max_count=${10}
+
+life_375255092593_Minsk_offset_390
+    Send Messages    account_id=${life_375255092593}
+    ...              offset=390
+    ...              sleep=28
+    ...              max_count=${10}
+
+life_375255092031_Minsk_offset_420
+    Send Messages    account_id=${life_375255092031}
+    ...              offset=420
+    ...              sleep=30
+    ...              max_count=${10}
