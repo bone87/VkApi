@@ -47,24 +47,24 @@ mts_375298360265_Minsk_offset_210
     ...              sleep=16
     ...              max_count=${10}
 
-mts_375292025693_Minsk_offset_240
-    Send Messages    account_id=${mts_375292025693}
+life_375255145904_Minsk_offset_240
+    Send Messages    account_id=${life_375255145904}
     ...              offset=240
     ...              sleep=18
 
-mts_375298681142_Minsk_offset_270
-    Send Messages    account_id=${mts_375298681142}
+life_375255157173_Minsk_offset_270
+    Send Messages    account_id=${life_375255157173}
     ...              offset=270
     ...              sleep=20
     ...              max_count=${10}
 
-mts_375336610743_Minsk_offset_300
-    Send Messages    account_id=${mts_375336610743}
+life_375255218247_Minsk_offset_300
+    Send Messages    account_id=${life_375255218247}
     ...              offset=301
     ...              sleep=22
 
-mts_375298845346_Minsk_offset_330
-    Send Messages    account_id=${mts_375298845346}
+life_375255174804_Minsk_offset_330
+    Send Messages    account_id=${life_375255174804}
     ...              offset=330
     ...              sleep=24
 
