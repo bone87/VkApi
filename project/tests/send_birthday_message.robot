@@ -26,8 +26,8 @@ vlc_375299403419_Minsk_offset_90
     ...              offset=90
     ...              sleep=8
 
-vlc_375445528788_Minsk_offset_120
-    Send Messages    account_id=${vlc_375445528788}
+life_375255220296_Minsk_offset_120
+    Send Messages    account_id=${life_375255220296}
     ...              offset=121
     ...              sleep=10
 

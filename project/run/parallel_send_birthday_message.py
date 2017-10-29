@@ -12,7 +12,7 @@ tests_list = [
     'life_375255100893_Minsk_offset_30',
     'mts_375292463065_Minsk_offset_60',
     # 'vlc_375299403419_Minsk_offset_90',
-    'vlc_375445528788_Minsk_offset_120',
+    'life_375255220296_Minsk_offset_120',
     'vlc_375447693824_Minsk_offset_150',
     'mts_375298462344_Minsk_offset_180',
     'mts_375298360265_Minsk_offset_210',
