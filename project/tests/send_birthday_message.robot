@@ -7,19 +7,16 @@ life_375255102578_Minsk_offset_0
     Send Messages    account_id=${life_375255102578}
     ...              offset=0
     ...              sleep=2
-    ...              max_count=${10}
 
 life_375255100893_Minsk_offset_30
     Send Messages    account_id=${life_375255100893}
     ...              offset=30
     ...              sleep=4
-    ...              max_count=${10}
 
 mts_375292463065_Minsk_offset_60
     Send Messages    account_id=${mts_375292463065}
     ...              offset=60
     ...              sleep=6
-    ...              max_count=${10}
 
 vlc_375299403419_Minsk_offset_90
     Send Messages    account_id=${vlc_375299403419}
@@ -45,7 +42,6 @@ mts_375298360265_Minsk_offset_210
     Send Messages    account_id=${mts_375298360265}
     ...              offset=210
     ...              sleep=16
-    ...              max_count=${10}
 
 life_375255145904_Minsk_offset_240
     Send Messages    account_id=${life_375255145904}
@@ -56,7 +52,6 @@ life_375255157173_Minsk_offset_270
     Send Messages    account_id=${life_375255157173}
     ...              offset=270
     ...              sleep=20
-    ...              max_count=${10}
 
 life_375255218247_Minsk_offset_300
     Send Messages    account_id=${life_375255218247}
@@ -72,16 +67,13 @@ life_375255095305_Minsk_offset_360
     Send Messages    account_id=${life_375255095305}
     ...              offset=360
     ...              sleep=26
-    ...              max_count=${10}
 
 life_375255092593_Minsk_offset_390
     Send Messages    account_id=${life_375255092593}
     ...              offset=390
     ...              sleep=28
-    ...              max_count=${10}
 
 life_375255092031_Minsk_offset_420
     Send Messages    account_id=${life_375255092031}
     ...              offset=420
     ...              sleep=30
-    ...              max_count=${10}
