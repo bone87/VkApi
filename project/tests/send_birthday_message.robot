@@ -77,3 +77,8 @@ life_375255092031_Minsk_offset_420
     Send Messages    account_id=${life_375255092031}
     ...              offset=420
     ...              sleep=30
+
+life_375257214755_Minsk_offset_450
+    Send Messages    account_id=${life_375257214755}
+    ...              offset=450
+    ...              sleep=32

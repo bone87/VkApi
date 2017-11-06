@@ -18,11 +18,14 @@ tests_list = [
     'mts_375298360265_Minsk_offset_210',
     'life_375255145904_Minsk_offset_240',
     'life_375255157173_Minsk_offset_270',
+
     # 'life_375255218247_Minsk_offset_300',
+
     'life_375255174804_Minsk_offset_330',
     'life_375255095305_Minsk_offset_360',
     'life_375255092593_Minsk_offset_390',
-    'life_375255092031_Minsk_offset_420'
+    'life_375255092031_Minsk_offset_420',
+    'life_375257214755_Minsk_offset_450'
 ]
 run_and_mail(tests=tests_list,
              path_to_test=path_to_test,
