@@ -12,7 +12,7 @@ tests_list = [
     'life_375255100893_Minsk_offset_30',
     'mts_375292463065_Minsk_offset_60',
     'vlc_375299403419_Minsk_offset_90',
-    'life_375255220296_Minsk_offset_120',
+    # 'life_375255220296_Minsk_offset_120',
     'vlc_375447693824_Minsk_offset_150',
     'mts_375298462344_Minsk_offset_180',
     'mts_375298360265_Minsk_offset_210',
@@ -26,7 +26,8 @@ tests_list = [
     'life_375255092593_Minsk_offset_390',
     'life_375255092031_Minsk_offset_420',
     'life_375257214755_Minsk_offset_450',
-    'life_375257246699_Minsk_offset_480'
+    'life_375257246699_Minsk_offset_480',
+    'life_375257291142_Minsk_offset_510'
 ]
 run_and_mail(tests=tests_list,
              path_to_test=path_to_test,
