@@ -92,17 +92,17 @@ life_375257291142_Minsk_offset_510
     Send Messages    account_id=${life_375257291142}
     ...              offset=580
     ...              sleep=36
-    ...              count=${100}
+    ...              count=${200}
 
 life_375257316475_Minsk_offset_540
     Send Messages    account_id=${life_375257316475}
-    ...              offset=590
+    ...              offset=780
     ...              sleep=38
-    ...              count=${100}
+    ...              count=${200}
 
 life_375257182374_Minsk_offset_570
     Send Messages    account_id=${life_375257182374}
-    ...              offset=690
+    ...              offset=980
     ...              sleep=40
-    ...              count=${100}
+    ...              count=${200}
     ...              max_count=${10}
