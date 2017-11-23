@@ -102,4 +102,3 @@ life_375257182374_Minsk_offset_570
     Send Messages    account_id=${life_375257182374}
     ...              offset=570
     ...              sleep=40
-    ...              max_count=${10}
