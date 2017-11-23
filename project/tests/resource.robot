@@ -2,6 +2,7 @@
 Documentation    Resource File.
 Library  ../steps/usersSteps.py
 Library  ../steps/messagesSteps.py
+Library  ../../framework/utils/email_sender.py
 Resource  common.robot
 
 *** Variables ***
@@ -24,5 +25,6 @@ Send Messages
 #    ...                                   users=${users}
 #    ...                                   max_count=${max_count}
 
-    log to console  ${OUTPUT_DIR}
-    log to console  ${OUTPUT_FILE}
+    log to console  ${LOG_FILE}
+    Send Email With Attach    subject=Qwe
+    ...                       attached_file=${LOG_FILE}
