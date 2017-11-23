@@ -13,7 +13,7 @@ Send Messages
     [Documentation]    Send Birthday Messages To Users
     [Arguments]  ${account_id}
     ...          ${offset}
-    ...          ${sleep}
+    ...          ${sleep}=${5}
     ...          ${max_count}=${20}
     BuiltIn.Sleep    ${sleep}
     ${users}=    Search Birthday Users    account_id=${account_id}
