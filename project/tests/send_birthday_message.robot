@@ -49,8 +49,9 @@ life_375255218247
     ...              offset=301
 
 life_375255174804
-    Send Messages    account_id=${life_375255174804}
-    ...              offset=330
+    Log    BLOCKED
+#    Send Messages    account_id=${life_375255174804}
+#    ...              offset=330
 
 life_375255095305
     Send Messages    account_id=${life_375255095305}
