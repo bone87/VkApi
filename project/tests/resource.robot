@@ -25,6 +25,4 @@ Send Messages
 #    ...                                   users=${users}
 #    ...                                   max_count=${max_count}
 
-    log to console  ${LOG_FILE}
-    Send Email With Attach    subject=Qwe
-    ...                       attached_file=${LOG_FILE}
+    Send Email With Attach    attached_file=${LOG_FILE}
