@@ -14,8 +14,10 @@ Send Messages
     [Documentation]    Send Birthday Messages To Users
     [Arguments]  ${account_id}
     ...          ${offset}
+    ...          ${test_name}
     ...          ${sleep}=${5}
     ...          ${max_count}=${20}
+
     BuiltIn.Sleep    ${sleep}
     ${users}=    Search Birthday Users    account_id=${account_id}
     ...                                   offset=${offset}
@@ -26,3 +28,4 @@ Send Messages
 #    ...                                   max_count=${max_count}
 
     Send Email With Attach    attached_file=${LOG_FILE}
+    ...                       subject=${test_name}
