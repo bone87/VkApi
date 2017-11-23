@@ -6,7 +6,7 @@ Resource  resource.robot
 life_375255102578
     Send Messages    account_id=${life_375255102578}
     ...              offset=0
-    ...              test_name=life_375255102578
+#    ...              test_name=life_375255102578
 
 life_375255100893
     Send Messages    account_id=${life_375255100893}

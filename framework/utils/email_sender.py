@@ -5,7 +5,7 @@ import smtplib
 import datetime
 
 
-def send_email_with_attach(attached_file, subject=None, recipien="87bone@gmail.com",):
+def send_email_with_attach(attached_file, subject='no_subj', recipien="87bone@gmail.com",):
     msg = MIMEMultipart()
     msg['From'] = 'useru009@gmail.com'
     msg['To'] = recipien

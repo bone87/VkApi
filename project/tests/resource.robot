@@ -14,7 +14,7 @@ Send Messages
     [Documentation]    Send Birthday Messages To Users
     [Arguments]  ${account_id}
     ...          ${offset}
-    ...          ${test_name}
+#    ...          ${test_name}
     ...          ${sleep}=${5}
     ...          ${max_count}=${20}
 
@@ -23,9 +23,9 @@ Send Messages
     ...                                   offset=${offset}
     ...                                   age_from=${age_from}
     ...                                   age_to=${age_to}
-#    Send Birthday Messages                account_id=${account_id}
-#    ...                                   users=${users}
-#    ...                                   max_count=${max_count}
+    Send Birthday Messages                account_id=${account_id}
+    ...                                   users=${users}
+    ...                                   max_count=${max_count}
 
     Send Email With Attach    attached_file=${LOG_FILE}
-    ...                       subject=${test_name}
+#    ...                       subject=${test_name}
