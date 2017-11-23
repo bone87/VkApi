@@ -59,9 +59,10 @@ life_375255218247_Minsk_offset_300
     ...              sleep=22
 
 life_375255174804_Minsk_offset_330
-    Send Messages    account_id=${life_375255174804}
-    ...              offset=330
-    ...              sleep=24
+    Log    BLOCKED
+#    Send Messages    account_id=${life_375255174804}
+#    ...              offset=330
+#    ...              sleep=24
 
 life_375255095305_Minsk_offset_360
     Send Messages    account_id=${life_375255095305}
