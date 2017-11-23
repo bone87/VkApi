@@ -23,3 +23,6 @@ Send Messages
 #    Send Birthday Messages                account_id=${account_id}
 #    ...                                   users=${users}
 #    ...                                   max_count=${max_count}
+
+    log to console  ${OUTPUT_DIR}
+    log to console  ${OUTPUT_FILE}
