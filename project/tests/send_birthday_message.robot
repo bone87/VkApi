@@ -50,6 +50,7 @@ life_375255218247
 
 life_375255174804
     Log    BLOCKED
+    Send Email With Attach    attached_file=${LOG_FILE}
 #    Send Messages    account_id=${life_375255174804}
 #    ...              offset=330
 
