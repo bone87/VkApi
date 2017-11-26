@@ -46,13 +46,13 @@ life_375255157173
 
 life_375255218247
     Send Messages    account_id=${life_375255218247}
-    ...              offset=301
+    ...              offset=300
 
 life_375255174804
-    Log    BLOCKED
-    Send Email With Attach    attached_file=${LOG_FILE}
-#    Send Messages    account_id=${life_375255174804}
-#    ...              offset=330
+#    Log    BLOCKED
+#    Send Email With Attach    attached_file=${LOG_FILE}
+    Send Messages    account_id=${life_375255174804}
+    ...              offset=330
 
 life_375255095305
     Send Messages    account_id=${life_375255095305}
