@@ -25,8 +25,8 @@ life_375255220296
     ...              offset=120
 
 vlc_375447693824
-    Send Messages    account_id=${vlc_375447693824}
-    ...              offset=150
+#    Send Messages    account_id=${vlc_375447693824}
+#    ...              offset=150
 
 mts_375298462344
     Send Messages    account_id=${mts_375298462344}
