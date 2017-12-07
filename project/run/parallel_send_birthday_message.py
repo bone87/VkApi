@@ -27,7 +27,7 @@ tests_list = [
     'life_375257246699_Minsk_offset_480',
     'life_375257291142_Minsk_offset_510',
     'life_375257316475_Minsk_offset_540',
-    'life_375257182374_Minsk_offset_570'
+    # 'life_375257182374_Minsk_offset_570'
 ]
 run_and_mail(tests=tests_list,
              path_to_test=path_to_test,

@@ -1,12 +1,12 @@
 *** Settings ***
 Documentation    Send Birthday Messages Morning.
 Resource  resource.robot
+Test Teardown  Test Teardown
 
 *** Test Cases ***
 life_375255102578
     Send Messages    account_id=${life_375255102578}
     ...              offset=0
-#    ...              test_name=life_375255102578
 
 life_375255100893
     Send Messages    account_id=${life_375255100893}
@@ -49,8 +49,6 @@ life_375255218247
     ...              offset=300
 
 life_375255174804
-#    Log    BLOCKED
-#    Send Email With Attach    attached_file=${LOG_FILE}
     Send Messages    account_id=${life_375255174804}
     ...              offset=330
 
@@ -85,3 +83,9 @@ life_375257316475
 life_375257182374
     Send Messages    account_id=${life_375257182374}
     ...              offset=570
+
+*** Keywords ***
+Test Teardown
+    Run Keyword If  '${TEST_STATUS}' == 'FAIL'
+    ...    Send Email With Attach    attached_file=${LOG_FILE}
+    ...                              subject=${TEST_NAME}_FAIL
