@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Send Birthday Messages Morning.
 Resource  resource.robot
-Test Teardown  Test Teardown
+Suite Teardown  Suite Teardown
 
 *** Test Cases ***
 life_375255102578
@@ -84,8 +84,7 @@ life_375257182374
     Send Messages    account_id=${life_375257182374}
     ...              offset=570
 
-*** Keywords ***
-Test Teardown
+Suite Teardown
     Run Keyword If  '${TEST_STATUS}' == 'FAIL'
     ...    Send Email With Attach    attached_file=${LOG_FILE}
     ...                              subject=${TEST_NAME}_FAIL
