@@ -25,11 +25,11 @@ life_375255220296
     ...              offset=120
 
 vlc_375447693824
-#    Send Messages    account_id=${vlc_375447693824}
-#    ...              offset=150
+    Send Messages    account_id=${life_375259503668}
+    ...              offset=150
 
 mts_375298462344
-    Send Messages    account_id=${mts_375298462344}
+    Send Messages    account_id=${life_375259504065}
     ...              offset=180
 
 mts_375298360265
@@ -84,6 +84,7 @@ life_375257182374
     Send Messages    account_id=${life_375257182374}
     ...              offset=570
 
+*** Keywords ***
 Suite Teardown
     Run Keyword If  '${TEST_STATUS}' == 'FAIL'
     ...    Send Email With Attach    attached_file=${LOG_FILE}
