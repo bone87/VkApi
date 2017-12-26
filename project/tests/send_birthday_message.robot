@@ -87,20 +87,20 @@ life_375257182374
 life_375259503743
     Send Messages    account_id=${life_375259503743}
     ...              offset=600
-    ...              max_count=12
+    ...              max_count=${15}
 
 life_375259505623
     Send Messages    account_id=${life_375259505623}
     ...              offset=630
-    ...              max_count=13
+    ...              max_count=${15}
 
 life_375259503749
     Send Messages    account_id=${life_375259503749}
     ...              offset=660
-    ...              max_count=15
+    ...              max_count=${15}
 
 *** Keywords ***
 Suite Teardown
-    Run Keyword If  '${TEST_STATUS}' == 'FAIL'
+    Run Keyword If  '${SUITE_STATUS}' == 'FAIL'
     ...    Send Email With Attach    attached_file=${LOG_FILE}
-    ...                              subject=${TEST_NAME}_FAIL
+#    ...                              subject=${TEST_NAME}_FAIL
