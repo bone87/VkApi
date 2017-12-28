@@ -87,17 +87,14 @@ life_375257182374
 life_375259503743
     Send Messages    account_id=${life_375259503743}
     ...              offset=600
-    ...              max_count=${19}
 
 life_375259505623
     Send Messages    account_id=${life_375259505623}
     ...              offset=630
-    ...              max_count=${19}
 
 life_375259503749
     Send Messages    account_id=${life_375259503749}
     ...              offset=660
-    ...              max_count=${19}
 
 *** Keywords ***
 Suite Teardown
