@@ -96,6 +96,18 @@ life_375259503749
     Send Messages    account_id=${life_375259503749}
     ...              offset=660
 
+vlc_375296088061
+    Send Messages    account_id=${vlc_375296088061}
+    ...              offset=690
+
+mts_375295731035
+    Send Messages    account_id=${mts_375295731035}
+    ...              offset=720
+
+life_375259199963
+    Send Messages    account_id=${life_375259199963}
+    ...              offset=750
+
 *** Keywords ***
 Suite Teardown
     Run Keyword If  '${SUITE_STATUS}' == 'FAIL'
