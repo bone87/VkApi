@@ -33,12 +33,14 @@ def send_birthday_message(account_id, user_model):
                             message=message)
 
 
-def send_birthday_messages(account_id, users, max_count):
+def send_birthday_messages(account_id, users, max_count=20):
     users = detete_more_10_weeks_last_seen_users(users)
     count_users = len(users)
     log_info('Найдено {len} чел.'.format(len=count_users))
-    count = 1
+    count = 0
     for birthday_user in users:
+        if count >= max_count:
+            break
         result = send_birthday_message(account_id=account_id,
                                        user_model=birthday_user)
         if result is not None:
@@ -47,9 +49,6 @@ def send_birthday_messages(account_id, users, max_count):
                                                      count=count))
             sleep(random_seconds)
             count += 1
-            if count >= max_count:
-                break
-    log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count - 1,
-                                                                         len=count_users))
-    if (count-1) < 5:
+    log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count, len=count_users))
+    if count < 5:
         BuiltIn().fail(msg='Count < {}'.format(count-1))
