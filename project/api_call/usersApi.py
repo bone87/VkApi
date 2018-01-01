@@ -9,9 +9,9 @@ from project.configuration.configReader import parse_value_from_users_tokens
 
 
 class UsersApi(BaseApi):
-    def __init__(self, account_id):
+    def __init__(self, token):
         super(UsersApi, self).__init__()
-        self.token = parse_value_from_users_tokens()[account_id]
+        self.token = token
 
     def search(self, count, city, sex, age_from, age_to, offset=None, status=None, birth_day=None, birth_month=None):
         """
