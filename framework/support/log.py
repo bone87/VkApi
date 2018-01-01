@@ -38,10 +38,9 @@ log = config_log()
 template = '::[{file_name} => {module_name}]::'
 
 
-def log_step(number, message):
+def log_step(number):
     log.info("\n")
-    log_info(u":::::::::: {number}. {message} ::::::::::".format(number=number,
-                                                                message=message))
+    log_info(u":::::::::: {number} ::::::::::".format(number=number))
 
 
 def log_info(message):

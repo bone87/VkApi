@@ -8,9 +8,9 @@ from project.configuration.statusCode import status_code_200
 
 
 class MessagesApi(BaseApi):
-    def __init__(self, account_id):
+    def __init__(self, token):
         super(MessagesApi, self).__init__()
-        self.token = parse_value_from_users_tokens()[account_id]
+        self.token = token
 
     def send(self, user_model, text):
         """

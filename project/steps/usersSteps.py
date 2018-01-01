@@ -29,7 +29,7 @@ def detete_more_10_weeks_last_seen_users(users):
     return [user for user in users if user.last_seen >= convert_date_to_unix_time_stamp()]
 
 
-def search_birthday_users(account_id,
+def search_birthday_users(token,
                           count=30,
                           offset=0,
                           status=None,
@@ -41,15 +41,15 @@ def search_birthday_users(account_id,
     date = datetime.datetime.now() + datetime.timedelta(days=int(timedelta))
     day_now = date.day
     month_now = date.month
-    users = UsersApi(account_id).search(count=count,
-                                        offset=offset,
-                                        status=status,
-                                        city=city,
-                                        sex=sex,
-                                        age_from=age_from,
-                                        age_to=age_to,
-                                        birth_day=day_now,
-                                        birth_month=month_now)
+    users = UsersApi(token).search(count=count,
+                                   offset=offset,
+                                   status=status,
+                                   city=city,
+                                   sex=sex,
+                                   age_from=age_from,
+                                   age_to=age_to,
+                                   birth_day=day_now,
+                                   birth_month=month_now)
     return users
 
 
