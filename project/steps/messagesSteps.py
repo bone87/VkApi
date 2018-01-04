@@ -59,7 +59,7 @@ def send_birthday_messages(token, users, max_count=20):
                                        user_model=birthday_user)
         if result is not None:
             count += 1
-            random_seconds = get_random_int(20, 59)
+            random_seconds = get_random_int(60, 200)
             log_info('   {message}: {count}.'.format(message='Отправлено',
                                                      count=count))
             sleep(random_seconds)

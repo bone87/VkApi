@@ -12,6 +12,7 @@ ${age_to} =  35
 Birthday Sender
     Run Sender    age_from=${age_from}
     ...           age_to=${age_to}
+    ...           max_count=${10}
 
 *** Keywords ***
 Suite Teardown
