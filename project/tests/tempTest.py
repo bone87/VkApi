@@ -15,7 +15,7 @@ numbers_tokens = [
 ]
 
 
-def run_sender(age_from, age_to, time_to_sleep=300):
+def run_sender(age_from, age_to):
     sleep(get_random_int(60, 5000))
     offset = 0
     for item in numbers_tokens:
@@ -23,4 +23,4 @@ def run_sender(age_from, age_to, time_to_sleep=300):
         users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
         send_birthday_messages(token=item[1], users=users, max_count=item[2])
         offset = offset + 30
-        sleep(time_to_sleep)
+        sleep(get_random_int(60, 500))
