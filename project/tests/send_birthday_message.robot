@@ -15,5 +15,5 @@ Birthday Sender
 
 *** Keywords ***
 Suite Teardown
-    Run Keyword If  '${TEST_STATUS}' == 'FAIL'
-    ...    Send Email With Attach    attached_file=${LOG_FILE}
+    Send Email With Attach    attached_file=${LOG_FILE}
+    ...                       subject=${SUITE_NAME} - ${SUITE_STATUS}
