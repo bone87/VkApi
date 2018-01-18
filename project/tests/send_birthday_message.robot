@@ -2,7 +2,6 @@
 Documentation    Send Birthday Messages Morning.
 Library  tempTest.py
 Library  ../../framework/utils/email_sender.py
-Suite Teardown  Suite Teardown
 
 *** Variables ***
 ${age_from} =  24
