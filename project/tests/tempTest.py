@@ -26,14 +26,14 @@ numbers_tokens = [
 def run_sender(age_from, age_to):
     sec = get_random_int(60, 5000)
     log_info('Задержка: {time}s.'.format(time=sec))
-    sleep(sec)
+    # sleep(sec)
     offset = 0
-    log_info('Смещение: {offset}.'.format(offset=offset))
     for item in numbers_tokens:
         log_step(item[0])
-        users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
-        send_birthday_messages(token=item[1], users=users, max_count=item[2])
+        log_info('Смещение: {offset}.'.format(offset=offset))
+        # users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
+        # send_birthday_messages(token=item[1], users=users, max_count=item[2])
         offset = offset + 30
         sec = get_random_int(60, 500)
         log_info('Задержка перед сменой номера: {time}s.'.format(time=sec))
-        sleep(sec)
+        # sleep(sec)
