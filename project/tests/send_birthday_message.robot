@@ -15,5 +15,6 @@ Birthday Sender
 
 *** Keywords ***
 Suite Teardown
+    log    ${LOG_FILE}
     Send Email With Attach    attached_file=${LOG_FILE}
     ...                       subject=${SUITE_NAME} - ${SUITE_STATUS}
