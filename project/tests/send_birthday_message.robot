@@ -12,9 +12,3 @@ ${age_to} =  35
 Birthday Sender
     Run Sender    age_from=${age_from}
     ...           age_to=${age_to}
-
-*** Keywords ***
-Suite Teardown
-    log    ${LOG_FILE}
-    Send Email With Attach    attached_file=${LOG_FILE}
-    ...                       subject=${SUITE_NAME} - ${SUITE_STATUS}
