@@ -25,7 +25,7 @@ numbers_tokens = [
 
 def run_sender(age_from, age_to):
     sec = get_random_int(60, 5000)
-    log_info('Задержка: {time}s.'.format(time=sec))
+    log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
     # sleep(sec)
     offset = 0
     for item in numbers_tokens:
@@ -35,5 +35,5 @@ def run_sender(age_from, age_to):
         # send_birthday_messages(token=item[1], users=users, max_count=item[2])
         offset = offset + 30
         sec = get_random_int(60, 500)
-        log_info('Задержка перед сменой номера: {time}s.'.format(time=sec))
+        log_info('Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
         # sleep(sec)
