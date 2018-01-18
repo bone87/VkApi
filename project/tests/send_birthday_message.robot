@@ -10,3 +10,4 @@ ${age_to} =  35
 Birthday Sender
     Run Sender    age_from=${age_from}
     ...           age_to=${age_to}
+    fail
