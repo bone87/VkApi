@@ -64,5 +64,4 @@ def send_birthday_messages(token, users, max_count=20):
                                                      count=count))
             sleep(random_seconds)
     log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count, len=count_users))
-    # if count < 5:
-    #     BuiltIn().fail(msg='Count < {}'.format(count-1))
+    return count

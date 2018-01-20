@@ -21,6 +21,7 @@ numbers_tokens = [
     ["25 7311641", "728de0d39c92ddec5d292956e0c3152a4abbebd6111b4858b0469a110f470fe60b2426b05faae3dcdcf26", get_random_int(5, 9)],
     ["25 7351050", "b11dcee35fbbf091e5f1a31e6bcb38fbbea8ca77c2119226d126ad3881e5052bd7232cf46335c761cbd1e", get_random_int(5, 9)],
     ["25 7369155", "e1e44e192a795f1127a9cb9c50ee8dea291fbb56675e64392c1a9a838d4e5e970f8e4798f54cbb09b0168", get_random_int(5, 9)]
+    # ["25 9619978", "33c8d3d5100713b0c2db430eb98c956509e07440215ddb11fddb535d1fee08aa9b1b8247c557320a166e3", get_random_int(5, 9)]
 ]
 
 
@@ -29,12 +30,16 @@ def run_sender(age_from, age_to):
     log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
     sleep(sec)
     offset = 0
+    count = 0
     for item in numbers_tokens:
         log_step(item[0])
         log_info('Смещение: {offset}.'.format(offset=offset))
         users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
-        send_birthday_messages(token=item[1], users=users, max_count=item[2])
+        send_count = send_birthday_messages(token=item[1], users=users, max_count=item[2])
+        count = count + send_count
         offset = offset + 30
         sec = get_random_int(60, 500)
         log_info('Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
         sleep(sec)
+    log_info('')
+    log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
