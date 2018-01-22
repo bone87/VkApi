@@ -60,7 +60,6 @@ def run_sender(age_from, age_to):
     finally:
         send_email_with_attach(subject='{status}. {count}/{average}'.format(status=status,
                                                                             average=count/len(numbers_tokens),
-                                                                            count=count),
-                               attached_file=path_to_log_file)
+                                                                            count=count))
 
 run_sender(24, 35)
