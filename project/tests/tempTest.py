@@ -1,8 +1,12 @@
 # coding=utf-8
+import os
 from time import sleep
+
+import datetime
 
 from framework.support.commonFunctions import get_random_int
 from framework.support.log import log_step, log_info
+from framework.utils.email_sender import send_email_with_attach
 from project.steps.messagesSteps import send_birthday_messages
 from project.steps.usersSteps import search_birthday_users
 
@@ -27,6 +31,9 @@ numbers_tokens = [
     # ["25 7514961", "cc8c4ca584547e8a21c88db19a7d8372a5342c799c4db18cf19e80c98d16979b8a148a5c13f207bfd3525", get_random_int(5, 9)]
 ]
 
+path_to_log_file = os.path.abspath(os.path.dirname(__file__) + '{sep}..{sep}..{sep}log{sep}{today_date}.log'.format(
+    sep=os.sep, today_date=datetime.datetime.now().strftime("%Y-%m-%d")))
+
 
 def run_sender(age_from, age_to):
     sec = get_random_int(60, 5000)
@@ -34,15 +41,26 @@ def run_sender(age_from, age_to):
     sleep(sec)
     offset = 0
     count = 0
-    for item in numbers_tokens:
-        log_step(item[0])
-        log_info('Смещение: {offset}.'.format(offset=offset))
-        users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
-        send_count = send_birthday_messages(token=item[1], users=users, max_count=item[2])
-        count = count + send_count
-        offset = offset + 30
-        sec = get_random_int(60, 500)
-        log_info('Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
-        sleep(sec)
-    log_info('')
-    log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
+    status = 'PASS'
+    try:
+        for item in numbers_tokens:
+            log_step(item[0])
+            log_info('Смещение: {offset}.'.format(offset=offset))
+            users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
+            send_count = send_birthday_messages(token=item[1], users=users, max_count=item[2])
+            count = count + send_count
+            offset = offset + 30
+            sec = get_random_int(60, 500)
+            log_info('Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
+            sleep(sec)
+        log_info('')
+        log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
+    except Exception:
+        status = 'FAIL'
+    finally:
+        send_email_with_attach(subject='{status}. {count}/{average}'.format(status=status,
+                                                                            average=count/len(numbers_tokens),
+                                                                            count=count),
+                               attached_file=path_to_log_file)
+
+run_sender(24, 35)
