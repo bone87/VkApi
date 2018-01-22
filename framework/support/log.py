@@ -1,5 +1,6 @@
 # encoding=windows-1251
 import sys
+from logging import handlers
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -28,9 +29,9 @@ def config_log():
     ch = logging.StreamHandler(sys.stdout)
     ch.setFormatter(format)
     log.addHandler(ch)
-    # fh = handlers.RotatingFileHandler(create_log_file(), maxBytes=(1048576 * 5), backupCount=7)
-    # fh.setFormatter(format)
-    # log.addHandler(fh)
+    fh = handlers.RotatingFileHandler(create_log_file(), maxBytes=(1048576 * 5), backupCount=7)
+    fh.setFormatter(format)
+    log.addHandler(fh)
     return log
 
 
