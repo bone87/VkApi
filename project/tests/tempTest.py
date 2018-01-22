@@ -26,9 +26,9 @@ numbers_tokens = [
 
     ["25 7311641", "728de0d39c92ddec5d292956e0c3152a4abbebd6111b4858b0469a110f470fe60b2426b05faae3dcdcf26", get_random_int(10, 13)],
     ["25 7351050", "b11dcee35fbbf091e5f1a31e6bcb38fbbea8ca77c2119226d126ad3881e5052bd7232cf46335c761cbd1e", get_random_int(10, 13)],
-    ["25 7369155", "e1e44e192a795f1127a9cb9c50ee8dea291fbb56675e64392c1a9a838d4e5e970f8e4798f54cbb09b0168", get_random_int(5, 9)],
-    ["25 9619978", "33c8d3d5100713b0c2db430eb98c956509e07440215ddb11fddb535d1fee08aa9b1b8247c557320a166e3", get_random_int(5, 9)]
-    # ["25 7514961", "cc8c4ca584547e8a21c88db19a7d8372a5342c799c4db18cf19e80c98d16979b8a148a5c13f207bfd3525", get_random_int(5, 9)]
+    ["25 7369155", "e1e44e192a795f1127a9cb9c50ee8dea291fbb56675e64392c1a9a838d4e5e970f8e4798f54cbb09b0168", get_random_int(10, 13)],
+    ["25 9619978", "33c8d3d5100713b0c2db430eb98c956509e07440215ddb11fddb535d1fee08aa9b1b8247c557320a166e3", get_random_int(5, 9)],
+    ["25 7514961", "cc8c4ca584547e8a21c88db19a7d8372a5342c799c4db18cf19e80c98d16979b8a148a5c13f207bfd3525", get_random_int(5, 9)]
 ]
 
 path_to_log_file = os.path.abspath(os.path.dirname(__file__) + '{sep}..{sep}..{sep}log{sep}{today_date}.log'.format(
