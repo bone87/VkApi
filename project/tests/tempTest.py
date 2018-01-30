@@ -42,7 +42,7 @@ path_to_log_file = os.path.abspath(os.path.dirname(__file__) + '{sep}..{sep}..{s
 
 
 def run_sender(age_from, age_to):
-    sec = get_random_int(60, 5000)
+    sec = get_random_int(60, 500)
     log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
     sleep(sec)
     offset = 0
