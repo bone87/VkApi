@@ -30,10 +30,10 @@ numbers_tokens = [
     ["25 7514961", "cc8c4ca584547e8a21c88db19a7d8372a5342c799c4db18cf19e80c98d16979b8a148a5c13f207bfd3525", get_random_int(10, 17)],
     ["25 7409700", "8f8682270b315981b6613296e7de022f1ea9f0db1a45bca4751df04c9a07d15994bb281b913697a7486c5", get_random_int(10, 17)],
 
-    ["25 9619978", "33c8d3d5100713b0c2db430eb98c956509e07440215ddb11fddb535d1fee08aa9b1b8247c557320a166e3", get_random_int(10, 13)],
-    ["25 9619974", "2265aef190052a3870c8b2f855d96bd7eb8e9266e3541bc056b61430925155fe7cde7191d223da17845f4", get_random_int(5, 9)],
-    ["25 9619971", "07e96f21473caa6677a869725aed9e387efe64e3026e78c563035e394555317aafb5b2a461768b3182e20", get_random_int(5, 9)],
-    ["25 9619957", "b0ca35b568b04ed637ca835d4d285c390cecb67c24641b8a385b661efcc61621045b0bd8dd879d8bf8e24", get_random_int(5, 9)]
+    ["25 9619978", "33c8d3d5100713b0c2db430eb98c956509e07440215ddb11fddb535d1fee08aa9b1b8247c557320a166e3", get_random_int(10, 17)],
+    ["25 9619974", "2265aef190052a3870c8b2f855d96bd7eb8e9266e3541bc056b61430925155fe7cde7191d223da17845f4", get_random_int(10, 17)],
+    ["25 9619971", "07e96f21473caa6677a869725aed9e387efe64e3026e78c563035e394555317aafb5b2a461768b3182e20", get_random_int(10, 17)],
+    ["25 9619957", "b0ca35b568b04ed637ca835d4d285c390cecb67c24641b8a385b661efcc61621045b0bd8dd879d8bf8e24", get_random_int(10, 17)]
 
 ]
 
@@ -42,7 +42,7 @@ path_to_log_file = os.path.abspath(os.path.dirname(__file__) + '{sep}..{sep}..{s
 
 
 def run_sender(age_from, age_to):
-    sec = get_random_int(60, 500)
+    sec = get_random_int(60, 1000)
     log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
     sleep(sec)
     offset = 0
