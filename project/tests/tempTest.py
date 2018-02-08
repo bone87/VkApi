@@ -63,7 +63,7 @@ def run_sender(age_from, age_to):
             send_count = send_birthday_messages(token=item[1], users=users, max_count=item[2])
             count = count + send_count
             offset = offset + 30
-            sec = get_random_int(60, 500)
+            sec = get_random_int(60, 200)
             log_info('Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
             sleep(sec)
         log_info('')
