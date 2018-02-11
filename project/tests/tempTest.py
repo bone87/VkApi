@@ -59,6 +59,7 @@ def run_sender(age_from, age_to):
     offset = 0
     count = 0
     status = 'PASS'
+    error = 'GoooooD=)'
     try:
         for item in numbers_tokens:
             log_step(item[0])
@@ -72,11 +73,12 @@ def run_sender(age_from, age_to):
             sleep(sec)
         log_info('')
         log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
-    except Exception:
+    except Exception as error:
         status = 'FAIL'
     finally:
-        send_email_with_attach(subject='{status}. {count}/{average}'.format(status=status,
+        send_email_with_attach(error_message=error.args[0],
+                               subject='{status}. {count}/{average}'.format(status=status,
                                                                             average=count/len(numbers_tokens),
                                                                             count=count))
 
-run_sender(24, 35)
+run_sender(24, 40)

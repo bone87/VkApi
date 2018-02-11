@@ -1,21 +1,13 @@
-from email.mime.application import MIMEApplication
-from email.mime.multipart import MIMEMultipart
 import smtplib
-
 import datetime
+from email.mime.text import MIMEText
 
 
-def send_email_with_attach(attached_file=None, subject=None, recipien="87bone@gmail.com",):
-    msg = MIMEMultipart()
+def send_email_with_attach(error_message=None, subject=None, recipien="87bone@gmail.com",):
+    msg = MIMEText(error_message)
     msg['From'] = 'useru009@gmail.com'
     msg['To'] = recipien
     msg['Subject'] = '{date} - {subject}'.format(date=datetime.datetime.now().strftime("%Y-%m-%d"), subject=subject)
-    if attached_file:
-        msg.preamble = 'Multipart massage.\n'
-        part = MIMEApplication(open(str(attached_file), "rb").read())
-        part.add_header('Content-Disposition', 'attachment', filename=str(attached_file))
-        msg.attach(part)
-
     server = smtplib.SMTP("smtp.gmail.com:587")
     server.ehlo()
     server.starttls()
