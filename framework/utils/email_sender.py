@@ -3,8 +3,8 @@ import datetime
 from email.mime.text import MIMEText
 
 
-def send_email_with_attach(error_message=None, subject=None, recipien="87bone@gmail.com",):
-    msg = MIMEText(error_message)
+def send_email_with_attach(message=None, subject=None, recipien="87bone@gmail.com", ):
+    msg = MIMEText(message)
     msg['From'] = 'useru009@gmail.com'
     msg['To'] = recipien
     msg['Subject'] = '{date} - {subject}'.format(date=datetime.datetime.now().strftime("%Y-%m-%d"), subject=subject)

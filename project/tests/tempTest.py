@@ -1,5 +1,6 @@
 # coding=utf-8
 import os
+import time
 from time import sleep
 
 import datetime
@@ -9,6 +10,7 @@ from framework.support.log import log_step, log_info
 from framework.utils.email_sender import send_email_with_attach
 from project.steps.messagesSteps import send_birthday_messages
 from project.steps.usersSteps import search_birthday_users
+from timeit import default_timer as timer
 
 numbers_tokens = [
     ["25 7214755", "a3383acc5f71ac8b6b0e88184f10b0084625ab832f84f3e72fb20e6e858b1c2b11f9f98ffca7e011bd398", get_random_int(10, 17)],
@@ -43,8 +45,8 @@ numbers_tokens = [
     ["25 7628934", "a36441eb0265578fc29fb79ca2038fce7e5f24a462003d4f3cc06b57d408cea3b01f533c9f97b77289869", get_random_int(10, 17)],
 
     ["25 7329516", "5f7ed5ba39b90d4ed1c4861878b65faa2515780c1d226da56f7bcbffc142b735472aafda01d8199598a6f", get_random_int(10, 17)],
-    ["25 7559314", "af9b06edf0d78f6857b6ea54de3341dd8814313aa4049b38451423f5bc01eb1387fdc2c05ac111e95e171", get_random_int(5, 9)],
-    ["25 7537018", "6feca122c433c81cdd70c250de9382b735c80a49ac37109ddfa7415716e5093eaac1b3d9a7353052b2f60", get_random_int(5, 9)],
+    ["25 7559314", "af9b06edf0d78f6857b6ea54de3341dd8814313aa4049b38451423f5bc01eb1387fdc2c05ac111e95e171", get_random_int(10, 17)],
+    ["25 7537018", "6feca122c433c81cdd70c250de9382b735c80a49ac37109ddfa7415716e5093eaac1b3d9a7353052b2f60", get_random_int(10, 17)],
     ["25 7422821", "a8fa386ca7bf64908c60c007672cb6a9509c8790344ff8165f227edf1dfb44de171d1076423e8d4fd4af9", get_random_int(5, 9)],
     ["25 7390452", "2c234a06af3f34cb550e042a4db0031f578b59a9ebc463d11fed7015442029c91cad6547374c844100f1b", get_random_int(5, 9)]
 
@@ -55,13 +57,14 @@ path_to_log_file = os.path.abspath(os.path.dirname(__file__) + '{sep}..{sep}..{s
 
 
 def run_sender(age_from, age_to):
+    start = timer()
     sec = get_random_int(60, 1000)
     log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
     sleep(sec)
     offset = 0
     count = 0
     status = 'PASS'
-    error = 'GoooooD=)'
+    message = ''
     try:
         for item in numbers_tokens:
             log_step(item[0])
@@ -75,13 +78,26 @@ def run_sender(age_from, age_to):
             sleep(sec)
         log_info('')
         log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
-    except Exception as exc:
+    except Exception as error:
         status = 'FAIL'
-        error = exc.message
+        message = '\n\nError message: ' + error.message + '\nStopped at: {item}'.format(item=item[0])
     finally:
-        send_email_with_attach(error_message=error,
-                               subject='{status}. {count}/{average}'.format(status=status,
-                                                                            average=count/len(numbers_tokens),
+        end = timer()
+        duration_sec = end - start
+        duration_min = duration_sec // 60
+        sec_rest = duration_sec % 60
+        duration_hours = duration_min // 60
+        min_rest = duration_min % 60
+
+        duration_str = '{hours}h {min}min {sec}s'.format(hours=int(duration_hours),
+                                                         min=int(min_rest),
+                                                         sec=int(sec_rest))
+        message = 'Duration: {duration}\nCount: {count}'.format(duration=str(duration_str),
+                                                                count=count) \
+                  + message
+
+        send_email_with_attach(message=message,
+                               subject='{status}. {count} messages.'.format(status=status,
                                                                             count=count))
 
 run_sender(24, 40)
