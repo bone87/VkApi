@@ -75,9 +75,9 @@ def run_sender(age_from, age_to):
             sleep(sec)
         log_info('')
         log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
-    except Exception as error:
+    except Exception as exc:
         status = 'FAIL'
-        error = error.message
+        error = exc.message
     finally:
         send_email_with_attach(error_message=error,
                                subject='{status}. {count}/{average}'.format(status=status,
