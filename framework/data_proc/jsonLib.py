@@ -1,6 +1,8 @@
 import json
 
-from framework.support.log import log_info
+from framework.support.MyLogger import MyLogger
+
+logger = MyLogger()
 
 
 def get_pretty(json_message):
@@ -22,5 +24,5 @@ def get_value_from_json(json_str, key):
         value_json = json_str[key]
         return value_json
     except KeyError:
-        log_info('KeyError: {json}'.format(json=json_str))
+        logger.log_info('KeyError: {json}'.format(json=json_str))
         raise KeyError(json_str)

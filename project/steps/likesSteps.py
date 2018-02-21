@@ -4,7 +4,7 @@ import random
 from robot.libraries.BuiltIn import BuiltIn
 
 from framework.support.commonFunctions import get_random_int, sleep
-from framework.support.log import log_info
+from framework.support.MyLogger import log_info
 from project.api_call.friendsApi import FriendsApi
 from project.api_call.likesApi import LikesApi
 

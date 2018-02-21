@@ -4,7 +4,8 @@ from random import randint
 import time
 import datetime
 
-from framework.support.log import log_info
+from framework.support.MyLogger import MyLogger
+logger = MyLogger()
 
 
 def get_unique_string(length=8):
@@ -24,7 +25,7 @@ def get_random_int(lower=0, upper=100):
 
 
 def sleep(seconds):
-    log_info('   Задержка {minutes:.2f} min.'.format(minutes=float(seconds)/60))
+    logger.log_info('   Задержка {minutes:.2f} min.'.format(minutes=float(seconds)/60))
     time.sleep(seconds)
 
 
