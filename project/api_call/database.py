@@ -1,7 +1,7 @@
 # coding=utf-8
 from framework.http.httpLib import HttpLib
 from framework.data_proc.jsonLib import get_pretty
-from framework.support.log import log_info
+from framework.support.MyLogger import log_info
 
 
 def get_countries():

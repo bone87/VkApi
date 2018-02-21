@@ -1,16 +1,11 @@
 # coding=utf-8
-import os
-import time
 from time import sleep
-
-import datetime
-
 from framework.support.commonFunctions import get_random_int
-from framework.support.log import log_step, log_info
 from framework.utils.email_sender import send_email_with_attach
 from project.steps.messagesSteps import send_birthday_messages
 from project.steps.usersSteps import search_birthday_users
 from timeit import default_timer as timer
+from framework.support.MyLogger import MyLogger
 
 numbers_tokens = [
     ["25 7214755", "a3383acc5f71ac8b6b0e88184f10b0084625ab832f84f3e72fb20e6e858b1c2b11f9f98ffca7e011bd398", get_random_int(14, 18)],
@@ -19,7 +14,7 @@ numbers_tokens = [
     ["25 9062961", "ed9694b71bcd0a51d2c907fb0ef2163a4d99201ffa0c2a0287ea5a18c2cc44580a2731ba2e26e9018ea5f", get_random_int(14, 18)],
     ["25 9068942", "ccae722d41b078eea221ba7364c0aa47f4cc7f727a5d3e82f5261ca6764f4b49088e2238ff6122addf73c", get_random_int(14, 18)],
     ["25 9056798", "c97f4022af80e1de81f60f5905068c9ed5ec83242f52dab670e3e4ab24033cb5968fa624edba82f6c6e1e", get_random_int(14, 18)],
-
+    #
     ["25 7632584", "998aac3cf32cbf901a98720e7091839c6b708fd95535bb52b4c2ad55ad3c83278b194d59bd7b247056631", get_random_int(14, 18)],
     ["25 7596046", "3e78124b5b34bfae2791945dc750f0c942df217d2750b96843158d11f01f61350c8925755c3e72ab966d1", get_random_int(14, 18)],
     ["25 7578000", "cf14583ea9f67746d39ae41e202dfe981195cdf7cb192a24b56230361ca5b468b1b896d9ec3d71e2137b2", get_random_int(14, 18)],
@@ -52,35 +47,35 @@ numbers_tokens = [
 
 ]
 
-path_to_log_file = os.path.abspath(os.path.dirname(__file__) + '{sep}..{sep}..{sep}log{sep}{today_date}.log'.format(
-    sep=os.sep, today_date=datetime.datetime.now().strftime("%Y-%m-%d")))
+logger = MyLogger()
 
 
 def run_sender(age_from, age_to):
     start = timer()
     sec = get_random_int(60, 1000)
-    log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
+    logger.log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
     sleep(sec)
-    offset = 0
+    offset = 100
     count = 0
     status = 'PASS'
     message = ''
     try:
         for item in numbers_tokens:
-            log_step(item[0])
-            log_info('Смещение: {offset}.'.format(offset=offset))
+            logger.log_step(item[0])
+            logger.log_info('Смещение: {offset}.'.format(offset=offset))
             users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
             send_count = send_birthday_messages(token=item[1], users=users, max_count=item[2])
             count = count + send_count
             offset = offset + 30
             sec = get_random_int(60, 200)
-            log_info('Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
+            logger.log_info('Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
             sleep(sec)
-        log_info('')
-        log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
+        logger.log_info('')
+        logger.log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
     except Exception as error:
         status = 'FAIL'
-        message = '\n\nError message: ' + error.message + '\nStopped at: {item}'.format(item=item[0])
+        logger.log_pretty_json(json_message=error.args)
+        assert False
     finally:
         end = timer()
         duration_sec = end - start
@@ -95,9 +90,12 @@ def run_sender(age_from, age_to):
         message = 'Duration: {duration}\nCount: {count}'.format(duration=str(duration_str),
                                                                 count=count) \
                   + message
-
+        logger.__del__()
+        attached_file = logger.file_name
         send_email_with_attach(message=message,
+                               attached_file=attached_file,
                                subject='{status}. {count} messages.'.format(status=status,
                                                                             count=count))
+
 
 run_sender(24, 40)

@@ -1,7 +1,7 @@
 # coding=utf-8
 from framework.data_proc.jsonLib import get_value_from_json
 from framework.http.httpLib import HttpLib
-from framework.support.log import log_info
+from framework.support.MyLogger import log_info
 from project.api_call.baseApi import BaseApi
 from project.configuration.statusCode import status_code_200
 from project.configuration.configReader import parse_value_from_users_tokens

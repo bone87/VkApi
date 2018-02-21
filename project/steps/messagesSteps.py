@@ -1,11 +1,12 @@
 # coding=utf-8
 
-from robot.libraries.BuiltIn import BuiltIn
 from framework.support.commonFunctions import get_random_int, sleep
-from framework.support.log import log_info
+from framework.support.MyLogger import MyLogger
 from project.api_call.messagesApi import MessagesApi
 from project.steps.usersSteps import detete_more_10_weeks_last_seen_users
 import random
+
+logger = MyLogger()
 
 
 def send_message(token, user_model, message):
@@ -66,7 +67,7 @@ def send_birthday_message(token, user_model):
 def send_birthday_messages(token, users, max_count=20):
     users = detete_more_10_weeks_last_seen_users(users)
     count_users = len(users)
-    log_info('Найдено {len} чел.'.format(len=count_users))
+    logger.log_info('Найдено {len} чел.'.format(len=count_users))
     count = 0
     for birthday_user in users:
         if count >= max_count:
@@ -76,8 +77,7 @@ def send_birthday_messages(token, users, max_count=20):
         if result is not None:
             count += 1
             random_seconds = get_random_int(100, 200)
-            log_info('   {message}: {count}.'.format(message='Отправлено',
-                                                     count=count))
+            logger.log_info('   {message}: {count}.'.format(message='Отправлено', count=count))
             sleep(random_seconds)
-    log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count, len=count_users))
+    logger.log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count, len=count_users))
     return count

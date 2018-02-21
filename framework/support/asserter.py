@@ -1,4 +1,4 @@
-from framework.support.log import log_info
+from framework.support.MyLogger import log_info
 
 
 def assert_equal(exp1, exp2, message=None):
