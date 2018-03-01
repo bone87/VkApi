@@ -52,9 +52,9 @@ logger = MyLogger()
 
 def run_sender(age_from, age_to):
     start = timer()
-    # sec = get_random_int(60, 1000)
-    # logger.log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
-    # sleep(sec)
+    sec = get_random_int(60, 1000)
+    logger.log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
+    sleep(sec)
     offset = 0
     count = 0
     status = 'PASS'
@@ -64,7 +64,7 @@ def run_sender(age_from, age_to):
             logger.log_step(item[0])
             logger.log_info('Смещение: {offset}.'.format(offset=offset))
             users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
-            send_count = send_birthday_messages(token=item[1], users=users, max_count=item[2]/2)
+            send_count = send_birthday_messages(token=item[1], users=users, max_count=item[2])
             count = count + send_count
             offset = offset + 30
             sec = get_random_int(60, 200)
