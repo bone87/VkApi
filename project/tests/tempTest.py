@@ -52,9 +52,9 @@ logger = MyLogger()
 
 def run_sender(age_from, age_to):
     start = timer()
-    sec = get_random_int(60, 1000)
-    logger.log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
-    sleep(sec)
+    # sec = get_random_int(60, 1000)
+    # logger.log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
+    # sleep(sec)
     offset = 0
     count = 0
     status = 'PASS'
