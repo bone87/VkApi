@@ -102,4 +102,4 @@ def run_sender(age_from, age_to):
                                                                             count=count))
 
 
-# run_sender(24, 40)
+run_sender(24, 40)
