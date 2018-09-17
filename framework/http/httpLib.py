@@ -19,7 +19,7 @@ class HttpLib(object):
         self.response = requests.get(url=self.url,
                                      params=self.params,
                                      headers=self.header)
-        self.logger.log_pretty_json(json_message=get_value_from_json(self.response.json(), 'response'))
+        # self.logger.log_pretty_json(json_message=get_value_from_json(self.response.json(), 'response'))
         return self
 
     def send_post(self):
@@ -28,5 +28,5 @@ class HttpLib(object):
                                       body=self.body,
                                       json=self.json,
                                       headers=self.header)
-        self.logger.log_pretty_json(json_message=get_value_from_json(self.response.json(), 'response'))
+        # self.logger.log_pretty_json(json_message=get_value_from_json(self.response.json(), 'response'))
         return self
