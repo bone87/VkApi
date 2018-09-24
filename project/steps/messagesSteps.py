@@ -64,8 +64,46 @@ def send_birthday_message(token, user_model):
                             message=message)
 
 
+def send_birthday_message_sto325(token, user_model):
+    if user_model.can_write_private_message == 1:
+        birthday_message = 'с днЁм рождения😊 Здоровья, любви, тепла и чтобы всё сбылось, что сегодня нажелают😉'
+        birthday_message2 = 'с днем рождения😊 Желаем вам крепкого здоровья, отличных друзей и исполнения самых безумных идей😉'
+        birthday_message3 = 'с днем рождения! Не буду желать ничего хорошего, только лучшего😉 Успехов в делах, здоровья, новых открытий, самых приятных ' \
+                            'эмоций. Пусть вся жизнь будет сплошным праздником!😊'
+        birthday_message4 = 'c днем рождения😊 Желаю Вам счастья, бурной и преданной любви, материального благополучия и осуществления любых желаний😉'
+        birthday_message5 = 'поздравляю Вас с днём рождения😊 Желаю успехов и счастья, здоровья и бодрости, оптимизма и исполнения задуманных планов. ' \
+                            'Незабываемых впечатлений и только счастливых моментов😉'
+        birthday_message6 = 'с праздником Вас😊 Желаю стремиться только к лучшему, с легкостью достигать желаемых целей и никогда не унывать😉'
+
+        discount_message = 'В честь дня рождения мы дарим вам бесплатную диагностику подвески, тормозной системы и ' \
+                           'системы охлаждения! \n' \
+                           'А так же: ароматизатор в машину и смазку для замков!\n' \
+                           'Предварительная запись - обязательна!\n' \
+                           'Наш телефон +375447650800. Сообщите нам промокод "ВК325" и забирайте подарки.\n' \
+                           'www.sto325.by'
+        end_dialog = 'Еще раз с праздником!😊'
+        end_dialog2 = 'Хорошо Вам отметить😊'
+        end_dialog3 = 'Отличного Вам праздника😉'
+        end_dialog4 = 'Еще раз с Днем Рождения!😊'
+        end_dialog5 = 'Хорошего дня и отлично отметить😊'
+        message = '{birth}\n\n{discount}\n{end}'.format(birth=random.choice([birthday_message,
+                                                                             birthday_message2,
+                                                                             birthday_message3,
+                                                                             birthday_message4,
+                                                                             birthday_message5,
+                                                                             birthday_message6]),
+                                                        discount=random.choice([discount_message]),
+                                                        end=random.choice([end_dialog,
+                                                                           end_dialog2,
+                                                                           end_dialog3,
+                                                                           end_dialog4,
+                                                                           end_dialog5]))
+        return send_message(token=token,
+                            user_model=user_model,
+                            message=message)
+
+
 def send_birthday_messages(token, users, max_count=20):
-    users = detete_more_10_weeks_last_seen_users(users)
     count_users = len(users)
     logger.log_info('Найдено {len} чел.'.format(len=count_users))
     count = 0
@@ -74,6 +112,23 @@ def send_birthday_messages(token, users, max_count=20):
             break
         result = send_birthday_message(token=token,
                                        user_model=birthday_user)
+        if result is not None:
+            count += 1
+            random_seconds = get_random_int(100, 200)
+            logger.log_info('   {message}: {count}.'.format(message='Отправлено', count=count))
+            sleep(random_seconds)
+    logger.log_info('::: [END] Отправлено сообщений: {count}/{len}. :::'.format(count=count, len=count_users))
+    return count
+
+
+def send_birthday_messages_sto325(token, users, max_count=20):
+    count_users = len(users)
+    logger.log_info('Найдено {len} чел.'.format(len=count_users))
+    count = 0
+    for birthday_user in users:
+        if count >= max_count:
+            break
+        result = send_birthday_message_sto325(token=token, user_model=birthday_user)
         if result is not None:
             count += 1
             random_seconds = get_random_int(100, 200)

@@ -50,7 +50,7 @@ def search_birthday_users(token,
                                    age_to=age_to,
                                    birth_day=day_now,
                                    birth_month=month_now)
-    return users
+    return detete_more_10_weeks_last_seen_users(users)
 
 
 def search_users_minsk(account_id, count=1000, offset=0, status=None, age_from=19, age_to=49):
