@@ -10,8 +10,8 @@ from framework.support.MyLogger import MyLogger
 
 numbers_tokens = [
     ["29 6235325", "eed19b302144ead88c4e7c798689033343374bbbefc3c58986bf695642895a3ee1d1d37d35d88e451cf3d", get_random_int(10, 15)],
-    ["29 5375325", "95db3f151cf1e653017054624402b9c3390a936b3e0444317ec13ed8b5a8897fefb4baf4d3040d1170ba0", get_random_int(10, 15)],
-    ["25 7175325", "1d5ad974a8c4ae0b4d1ee4ce28f342fdb2549d5b2bbcfda670ba6b9a73e69c37c767c6ca27280a8f90a1d", get_random_int(10, 15)]
+    # ["29 5375325", "95db3f151cf1e653017054624402b9c3390a936b3e0444317ec13ed8b5a8897fefb4baf4d3040d1170ba0", get_random_int(10, 15)],
+    # ["25 7175325", "1d5ad974a8c4ae0b4d1ee4ce28f342fdb2549d5b2bbcfda670ba6b9a73e69c37c767c6ca27280a8f90a1d", get_random_int(10, 15)]
 
 ]
 
