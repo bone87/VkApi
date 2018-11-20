@@ -3,6 +3,7 @@ import requests
 from framework.data_proc.jsonLib import get_value_from_json
 from framework.support.MyLogger import MyLogger
 
+
 class HttpLib(object):
     def __init__(self, url, header=None, params=None, cookie=None, body=None, json=None, auth=None, response=None):
         self.url = url

@@ -1,8 +1,6 @@
 # coding=utf-8
 import random
 
-from robot.libraries.BuiltIn import BuiltIn
-
 from framework.support.commonFunctions import get_random_int, sleep
 from framework.support.MyLogger import log_info
 from project.api_call.friendsApi import FriendsApi
@@ -60,8 +58,8 @@ def likes_users_photo_account(account_id, users, limit):
             sleep(random_seconds)
     log_info('::: [END] Лайкнуто: {count}/{len} :::'.format(count=count - 1,
                                                             len=count_all_users_with_photo))
-    if (count-1) < 5:
-        BuiltIn().fail(msg='Count < {}'.format(count-1))
+    # if (count-1) < 5:
+    #     BuiltIn().fail(msg='Count < {}'.format(count-1))
 
 #
 # def like_users_photo(account_id, count, offset, age_from, age_to, sleep_time, timedelta=2, status=None):
