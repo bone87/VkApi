@@ -46,7 +46,7 @@ class UsersApi(BaseApi):
                                                                           150437158]):
                 user_model = User(user)
                 user_model_list.append(user_model)
-        self.logger.log_info('Всего найдено пользователей: {count}.'.format(count=len(user_model_list)))
+        self.logger.log_info(u'Всего найдено пользователей: {count}.'.format(count=len(user_model_list)))
         return user_model_list
 
     @staticmethod

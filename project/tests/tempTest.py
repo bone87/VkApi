@@ -59,7 +59,7 @@ logger = MyLogger()
 def run_sender(age_from, age_to):
     start = timer()
     sec = get_random_int(60, 1000)
-    logger.log_info('Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
+    logger.log_info(u'Задержка: {min}min {sec}s.'.format(min=sec//60, sec=sec % 60))
     sleep(sec)
     offset = 0
     count = 0
@@ -68,16 +68,16 @@ def run_sender(age_from, age_to):
     try:
         for item in numbers_tokens:
             logger.log_step(item[0])
-            logger.log_info('Смещение: {offset}.'.format(offset=offset))
+            logger.log_info(u'Смещение: {offset}.'.format(offset=offset))
             users = search_birthday_users(token=item[1], offset=offset, age_from=age_from, age_to=age_to)
             send_count = send_birthday_messages(token=item[1], users=users, max_count=item[2])
             count = count + send_count
             offset = offset + 30
             sec = get_random_int(60, 200)
-            logger.log_info('Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
+            logger.log_info(u'Задержка перед сменой номера: {min}min {sec}s.'.format(min=sec // 60, sec=sec % 60))
             sleep(sec)
         logger.log_info('')
-        logger.log_info('Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
+        logger.log_info(u'Всего отправлено сообщений: {count}. Среднее значение: {mid}.'.format(count=count, mid=count/len(numbers_tokens)))
     except Exception as error:
         status = 'FAIL'
         logger.log_pretty_json(json_message=error.args)
