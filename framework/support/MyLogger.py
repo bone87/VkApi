@@ -20,7 +20,7 @@ class MyLogger(object):
 
     def __config__(self):
         self.logger = logging.getLogger()
-        self.logger.setLevel(logging.DEBUG)
+        self.logger.setLevel(logging.INFO)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         self.file_name = os.path.join(os.path.dirname(__file__), datetime.datetime.now().strftime("%Y-%m-%d") + '.txt')
         fh = logging.FileHandler(self.file_name)
