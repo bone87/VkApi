@@ -9,7 +9,7 @@ from framework.support.MyLogger import MyLogger
 
 numbers_tokens = [
     # ["25 7214755", "f60f2697290084269401c30cc12297965909f411c681fde1b7dc2fc77daf6ffde8a04659d272f80677dbf", get_random_int(4, 8), '1'],
-    ["25 9071166", "d7d021d6f7e9315692829c9aea08637f2abe615e5d42a70b7d79f87b53679bb69f38265bcfcf313664d96", get_random_int(3, 6), '2'],
+    # ["25 9071166", "d7d021d6f7e9315692829c9aea08637f2abe615e5d42a70b7d79f87b53679bb69f38265bcfcf313664d96", get_random_int(3, 6), '2'],
     ["25 9005346", "84ac09b524802cd6143cefe519ad3965e30f08a8ff53999ed99bb213a0952af932a90c0a1172ee6db62da", get_random_int(3, 6), '3'],
     ["25 9062961", "9e2ae486f5d2633e68580ea8d8573c1371992aeadeadcd7281894b2a496c1bf5c4cef40df449c6e924b5b", get_random_int(3, 6), '4'],
     ["25 9068942", "dc568b2d1365acc0a60bcf7fd9317962f0992d2bc2178568f940c64ef713d5b92630194f4ce0fb7e958dd", get_random_int(3, 6), '5'],
